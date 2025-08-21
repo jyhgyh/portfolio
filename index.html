@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rinat Hirfanov - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="text-gray-800">
+  <header class="bg-white fixed w-full top-0 z-50 shadow">
+    <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold"><a href="#accueil">Rinat Hirfanov</a></div>
+      <button id="menu-btn" class="md:hidden text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <span class="sr-only">Toggle Menu</span>
+      </button>
+      <ul id="nav-menu" class="hidden md:flex md:items-center md:space-x-6 absolute md:static bg-white md:bg-transparent w-full left-0 top-full text-center md:text-left">
+        <li class="my-2 md:my-0"><a href="#accueil" class="block px-4 py-2 hover:text-blue-600 transition-colors">Accueil</a></li>
+        <li class="my-2 md:my-0"><a href="#apropos" class="block px-4 py-2 hover:text-blue-600 transition-colors">À propos</a></li>
+        <li class="my-2 md:my-0"><a href="#competences" class="block px-4 py-2 hover:text-blue-600 transition-colors">Compétences</a></li>
+        <li class="my-2 md:my-0"><a href="#projets" class="block px-4 py-2 hover:text-blue-600 transition-colors">Projets</a></li>
+        <li class="my-2 md:my-0"><a href="#formation" class="block px-4 py-2 hover:text-blue-600 transition-colors">Formation</a></li>
+        <li class="my-2 md:my-0"><a href="#contact" class="block px-4 py-2 hover:text-blue-600 transition-colors">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="accueil" class="pt-20 min-h-screen flex items-center bg-gray-50">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 text-center md:text-left" data-aos="fade-right">
+        <h1 class="text-4xl font-bold mb-4">Rinat Hirfanov</h1>
+        <p class="text-xl text-gray-700 mb-6">Développeur Web</p>
+        <a href="#contact" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700 transition-colors">Contactez-moi</a>
+      </div>
+      <div class="md:w-1/2 text-center mt-8 md:mt-0" data-aos="fade-left">
+        <img src="/fb38c40930abf116.png" alt="Photo" class="w-40 h-40 md:w-56 md:h-56 rounded-full mx-auto md:mx-0 shadow-lg" />
+      </div>
+    </div>
+  </section>
+
+  <section id="apropos" class="py-16 bg-white" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-6">À propos</h2>
+      <p class="text-gray-800 leading-relaxed">Actuellement étudiant à la Web@cadémie d'Epitech, je suis passionné par le développement front-end et toujours prêt à relever de nouveaux défis.</p>
+      <p class="text-gray-800 leading-relaxed mt-4"><strong>Langues&nbsp;:</strong> Ukrainien, Russe (natif), Français (B1), Anglais (B1), Polonais (A1)</p>
+    </div>
+  </section>
+
+  <section id="competences" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Compétences</h2>
+      <div class="md:flex md:space-x-8">
+        <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-up">
+          <h3 class="text-2xl font-semibold mb-4">Compétences techniques</h3>
+          <div class="flex flex-wrap">
+            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">HTML</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">CSS</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">JS</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">PHP</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">Angular</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">Tailwind</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">TypeScript</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">Adobe Photoshop</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">Adobe Illustrator</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">React</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">NextJS</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">Kotlin</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">MySQL</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">MongoDB</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">GitHub</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">Figma</span>
+          </div>
+        </div>
+        <div class="md:w-1/2" data-aos="fade-up">
+          <h3 class="text-2xl font-semibold mb-4">Compétences personnelles</h3>
+          <div class="flex flex-wrap">
+            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">Travail en groupe</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">Autonomie</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">Sociable</span>
+            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">Gestion du stress</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projets" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Projets</h2>
+      <div class="mb-8 p-6 bg-gray-100 rounded-lg hover:shadow-lg transition-shadow" data-aos="fade-up">
+        <h3 class="text-2xl font-semibold mb-2">Mobalpa E-commerce</h3>
+        <p class="text-gray-800 mb-1">J'ai participé au développement en équipe d'une plateforme de commerce électronique pour Mobalpa à l'aide d'Angular, TypeScript et Tailwind CSS, en me concentrant sur le front-end et l'intégration de l'API.</p>
+        <p class="text-gray-600 text-sm"><strong>Technologies&nbsp;:</strong> Angular, TypeScript, Tailwind-CSS,  MySQL, MongoDB, Figma</p>
+      </div>
+      <a href="https://amanogawa.space/" target="_blank">
+      <div class="mb-8 p-6 bg-gray-100 rounded-lg hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-2xl font-semibold mb-2">Amanogawa Website</h3>
+        <p class="text-gray-800 mb-1">J'ai participé au développement du site web <em>Amanogawa</em> à l'aide de HTML, Tailwind CSS et JavaScript, en assurant une conception adaptative et des animations interactives pour une expérience utilisateur dynamique.</p>
+        <p class="text-gray-600 text-sm"><strong>Technologies&nbsp;:</strong> HTML, Tailwind CSS, JavaScript</p>
+      </div>
+    </a>
+    </div>
+  </section>
+
+  <section id="formation" class="py-16 bg-gray-50" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Formation</h2>
+      <a href="https://www.webacademie.org/" target="_blank">
+      <div class="mb-8 p-6 bg-gray-100 rounded-lg hover:shadow-lg transition-shadow" data-aos="fade-up">
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">2023-2025</span>
+        <h3 class="text-2xl font-semibold mb-2">Web@cadémie by Epitech</h3>
+        <p class="text-gray-800 mb-1"><strong>Formation Développeur Web (en cours)</strong></p>
+        <p class="text-gray-600 text-sm"><strong>France&nbsp;:</strong>Marseille</p>
+        <p class="text-gray-600 text-sm"><strong>Description&nbsp;:</strong>)</p>
+      </div>
+      </a>
+      <a href="https://www.lacordaire.com/" target="_blank">
+      <div class="mb-8 p-6 bg-gray-100 rounded-lg hover:shadow-lg transition-shadow" data-aos="fade-up">
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">2022-2023</span>
+        <h3 class="text-2xl font-semibold mb-2">lacordaire lycée</h3>
+        <p class="text-gray-800 mb-1"><strong>lycée general</strong></p>
+        <p class="text-gray-600 text-sm"><strong>France&nbsp;:</strong>Marseille</p>
+        <p class="text-gray-600 text-sm"><strong>Description&nbsp;:</strong>)</p>
+      </div>
+      </a>
+      <a href="https://www.fedec.eu/en/members/380-kmacpa-kyiv-municipal-academy-of-performing-and-circus-arts" target="_blank">
+      <div class="mb-8 p-6 bg-gray-100 rounded-lg hover:shadow-lg transition-shadow" data-aos="fade-up">
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">2021-2023</span>
+        <h3 class="text-2xl font-semibold mb-2">Académie Municipale des Arts du Spectacle et du Cirque de Kiev</h3>
+        <p class="text-gray-800 mb-1"><strong>Spécialisation Magicien</strong></p>
+        <p class="text-gray-600 text-sm"><strong>Ukraine&nbsp;:</strong>Kyiv</p>
+        <p class="text-gray-600 text-sm"><strong>Description&nbsp;:</strong>)</p>
+      </div>
+      </a>
+      <a href="https://itstep.org/" target="_blank">
+      <div class="mb-8 p-6 bg-gray-100 rounded-lg hover:shadow-lg transition-shadow" data-aos="fade-up">
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">2020-2021</span>
+        <h3 class="text-2xl font-semibold mb-2">It-step</h3>
+        <p class="text-gray-800 mb-1"><strong>Formation Webdesign</strong></p>
+        <p class="text-gray-600 text-sm"><strong>Ukraine&nbsp;:</strong>Kyiv</p>
+        <p class="text-gray-600 text-sm"><strong>Description&nbsp;:</strong>)</p>
+      </div>
+      <a href="https://www.clubkey.com.ua/" target="_blank">
+      <div class="mb-8 p-6 bg-gray-100 rounded-lg hover:shadow-lg transition-shadow" data-aos="fade-up">
+        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">2018-2020</span>
+        <h3 class="text-2xl font-semibold mb-2">Club Key</h3>
+        <p class="text-gray-800 mb-1"><strong>Formation Web-general</strong></p>
+        <p class="text-gray-600 text-sm"><strong>Ukraine&nbsp;:</strong>Kyiv</p>
+        <p class="text-gray-600 text-sm"><strong>Description&nbsp;:</strong>)</p>
+      </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="contact" class="py-16 bg-white" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-6 text-center">Contact</h2>
+      <div class="flex flex-col items-center space-y-2 text-gray-800">
+        <p><strong>Email&nbsp;:</strong> <a href="mailto:rinat.hirfanov@gmail.com" class="text-blue-600 hover:underline">rinat.hirfanov@gmail.com</a></p>
+        <p><strong>Téléphone&nbsp;:</strong> <a href="tel:+33612345678" class="text-blue-600 hover:underline">+33 7 12 34 56 78</a></p>
+        <p><strong>LinkedIn&nbsp;:</strong> <a href="https://www.linkedin.com/in/rinat-hirfanov-400a3a2b4/" class="text-blue-600 hover:underline" target="_blank" rel="noopener">linkedin.com/in/rinat-hirfanov</a></p>
+        <p><strong>GitHub&nbsp;:</strong> <a href="https://github.com/jyhgyh" class="text-blue-600 hover:underline" target="_blank" rel="noopener">github.com/rinathirfanov</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-100 py-4">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-sm text-gray-600">&copy; 2025 Rinat Hirfanov. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+    const menuBtn = document.getElementById('menu-btn');
+    const navMenu = document.getElementById('nav-menu');
+    menuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
