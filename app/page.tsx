@@ -26,14 +26,14 @@ export default function HomePage() {
             <h1 className="text-6xl font-bold mb-4">Привет меня зовут Ринат!👋</h1>
             <p className="text-3xl text-gray-700">Я фронтенд-разработчик, который любит превращать идеи в удобные и красивые сайты.</p>
             <div className="flex my-6 flex-wrap">
-                {[
-                  "Front-end", "Dising", "Business analyst",
-                ].map((t) => (
-                  <span key={t} className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">
-                    {t}
-                  </span>
-                ))}
-              </div>
+              {[
+                "Front-end", "Dising", "Business analyst",
+              ].map((t) => (
+                <span key={t} className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">
+                  {t}
+                </span>
+              ))}
+            </div>
             <a
               href="#contact"
               className="inline-block bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700 transition-colors"
@@ -57,84 +57,100 @@ export default function HomePage() {
         </div>
       </section>
 
-     {/* À propos */}
-<section id="apropos" className="py-16 bg-white" data-aos="fade-up">
-  <div className="container mx-auto px-4">
-    <h2 className="text-3xl font-bold mb-10 text-center">Обо мне</h2>
+      {/* À propos */}
+      <section id="apropos" className="py-16 bg-white" data-aos="fade-up">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-10 text-center">Обо мне</h2>
 
-    <div className="grid md:grid-cols-2 gap-8 items-start">
-      {/* Текст */}
-      <div className="space-y-6 text-gray-800 leading-relaxed">
-        <p>
-          Привет 👋 Я работаю с <strong>Angular</strong>, 
-          <strong> React</strong>, <strong>Next.js</strong> и 
-          <strong> TypeScript</strong>. За эстетику в проектах у меня отвечает 
-          <strong> Tailwind CSS</strong>. Иногда заглядываю и в бэкенд — 
-          <strong> Spring Boot</strong> или <strong>Node.js</strong>.
-        </p>
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            {/* Текст */}
+            <div className="space-y-6 text-gray-800 leading-relaxed">
+              <p>
+                Привет 👋 Я работаю с <strong>Angular</strong>,
+                <strong> React</strong>, <strong>Next.js</strong> и
+                <strong> TypeScript</strong>. За эстетику в проектах у меня отвечает
+                <strong> Tailwind CSS</strong>. Иногда заглядываю и в бэкенд —
+                <strong> Spring Boot</strong> или <strong>Node.js</strong>.
+              </p>
 
-        <p>
-          Сейчас я учусь в <strong>Web@cademie d’Epitech (Франция)</strong> и 
-          постоянно прокачиваюсь через разные проекты: от платформы для 
-          поддержки психического здоровья <em>(MindCare)</em> до своего портфолио 
-          <em>(One Life – One Page)</em> и даже RPG-игры.
-        </p>
+              <p>
+                Сейчас я учусь в <strong>Web@cademie d’Epitech (Франция)</strong> и
+                постоянно прокачиваюсь через разные проекты: от платформы для
+                поддержки психического здоровья <em>(MindCare)</em> до своего портфолио
+                <em>(One Life – One Page)</em> и даже RPG-игры.
+              </p>
 
-        <p>
-          Мне нравится совмещать дизайн и код, искать решения через детали и 
-          строить всё так, чтобы пользователю было максимально просто и приятно. 
-          Помимо веба, увлекаюсь графикой в <strong>Photoshop</strong> и 
-          <strong> Illustrator</strong>, люблю разбираться в логике процессов и 
-          открывать новые направления.
-        </p>
+              <p>
+                Мне нравится совмещать дизайн и код, искать решения через детали и
+                строить всё так, чтобы пользователю было максимально просто и приятно.
+                Помимо веба, увлекаюсь графикой в <strong>Photoshop</strong> и
+                <strong> Illustrator</strong>, люблю разбираться в логике процессов и
+                открывать новые направления.
+              </p>
 
-        <p>
-          Для меня разработка — это не только код, но и возможность создавать 
-          проекты, которые действительно работают для людей 🚀
-        </p>
-      </div>
+              <p>
+                Для меня разработка — это не только код, но и возможность создавать
+                проекты, которые действительно работают для людей 🚀
+              </p>
+            </div>
 
-      {/* Дополнительный блок — языки */}
-      <div className="bg-gray-50 rounded-2xl p-6 shadow-sm">
-        <h3 className="text-xl font-semibold mb-4">Языки</h3>
-        <ul className="space-y-2 text-gray-700">
-          <li>🇺🇦 Украинский, 🇷🇺 Русский (родные)</li>
-          <li>🇫🇷 Французский — B1</li>
-          <li>🇬🇧 Английский — B1</li>
-          <li>🇵🇱 Польский — A1</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+            {/* Дополнительный блок — языки */}
+            <div>
+              <div className="bg-gray-50 rounded-2xl p-6 shadow-sm">
+                <h3 className="text-xl font-semibold mb-4">Языки</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li>🇺🇦 Украинский, 🇷🇺 Русский (родные)</li>
+                  <li>🇫🇷 Французский — B1</li>
+                  <li>🇬🇧 Английский — B1</li>
+                  <li>🇵🇱 Польский — A1</li>
+                </ul>
+              </div>
+              <div className="bg-gray-50 rounded-2xl mt-6 px-6 pb-4 pt-3 shadow-sm">
+                {/* <div className=""> */}
+                <h3 className="text-xl font-semibold mb-3">Личные качества</h3>
+                <ul className="text-gray-800 space-y-1">
+                  <li>🤝 Работа в команде</li>
+                  <li>🎯 Автономность</li>
+                  <li>🙂 Коммуникабельность</li>
+                  <li>💪 Умение справляться со стрессом</li>
+                </ul>
+                {/* </div> */}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-
-      {/* Compétences */}
       <section id="competences" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Compétences</h2>
+          <h2 className="text-3xl font-bold mb-10 text-center">Compétences</h2>
 
-          <div className="flex space-x-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {/* Techniques */}
-            <div className="w-1/2 mb-8 mb-0" data-aos="fade-up">
+            <div className="bg-white rounded-2xl shadow-sm p-6" data-aos="fade-up">
               <h3 className="text-2xl font-semibold mb-4">Compétences techniques</h3>
-              <div className="flex flex-wrap">
-                {[
-                  "HTML", "CSS", "JS", "PHP", "Angular", "Tailwind", "TypeScript", "Adobe Photoshop", "Adobe Illustrator",
-                  "React", "NextJS", "Kotlin", "MySQL", "MongoDB", "GitHub", "Figma",
-                ].map((t) => (
+
+              <h4 className="font-medium text-gray-700 mb-2">Frontend</h4>
+              <div className="flex flex-wrap mb-4">
+                {["HTML", "CSS", "JS", "Angular", "React", "NextJS", "TypeScript", "Tailwind"].map((t) => (
                   <span key={t} className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">
                     {t}
                   </span>
                 ))}
               </div>
-            </div>
 
-            {/* Personnelles */}
-            <div className="w-1/2" data-aos="fade-up">
-              <h3 className="text-2xl font-semibold mb-4">Compétences personnelles</h3>
+              <h4 className="font-medium text-gray-700 mb-2">Backend & Bases de données</h4>
+              <div className="flex flex-wrap mb-4">
+                {["PHP", "MySQL", "MongoDB"].map((t) => (
+                  <span key={t} className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              <h4 className="font-medium text-gray-700 mb-2">Outils & Design</h4>
               <div className="flex flex-wrap">
-                {["Travail en groupe", "Autonomie", "Sociable", "Gestion du stress"].map((t) => (
+                {["Adobe Photoshop", "Adobe Illustrator", "Figma", "GitHub", "Kotlin"].map((t) => (
                   <span key={t} className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">
                     {t}
                   </span>
@@ -144,6 +160,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
 
       {/* Projets */}
       <section id="projets" className="py-16 bg-white">
