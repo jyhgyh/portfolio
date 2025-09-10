@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Header from "./components/Header";
+import Header from "./components/header";
+import ContactForm from "./components/ContactForm";
 
 export default function HomePage() {
   // const [open, setOpen] = useState(false);
@@ -22,8 +23,17 @@ export default function HomePage() {
       <section id="accueil" className="pt-20 min-h-screen flex items-center bg-gray-50">
         <div className="container mx-auto px-4 flex flex-col flex-row items-center">
           <div className="w-1/2 text-center text-left" data-aos="fade-right">
-            <h1 className="text-4xl font-bold mb-4">Rinat Hirfanov</h1>
-            <p className="text-xl text-gray-700 mb-6">Développeur Web</p>
+            <h1 className="text-6xl font-bold mb-4">Привет меня зовут Ринат!👋</h1>
+            <p className="text-3xl text-gray-700">Я фронтенд-разработчик, который любит превращать идеи в удобные и красивые сайты.</p>
+            <div className="flex my-6 flex-wrap">
+                {[
+                  "Front-end", "Dising", "Business analyst",
+                ].map((t) => (
+                  <span key={t} className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">
+                    {t}
+                  </span>
+                ))}
+              </div>
             <a
               href="#contact"
               className="inline-block bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700 transition-colors"
@@ -33,9 +43,9 @@ export default function HomePage() {
           </div>
 
           <div className="w-1/2 text-center mt-8 mt-0" data-aos="fade-left">
-            <div className="w-40 h-40 w-56 h-56 rounded-full mx-auto mx-0 shadow-lg overflow-hidden">
+            <div className="w-40 h-40 w-96 h-96 rounded-full mx-auto mx-0 shadow-lg overflow-hidden">
               <Image
-                src="/fb38c40930abf116.png"
+                src="/Rinat.png"
                 alt="Photo"
                 width={224}
                 height={224}
@@ -47,19 +57,57 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* À propos */}
-      <section id="apropos" className="py-16 bg-white" data-aos="fade-up">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-6">À propos</h2>
-          <p className="text-gray-800 leading-relaxed">
-            Actuellement étudiant à la Web@cadémie d&apos;Epitech, je suis passionné par le développement
-            front-end et toujours prêt à relever de nouveaux défis.
-          </p>
-          <p className="text-gray-800 leading-relaxed mt-4">
-            <strong>Langues&nbsp;:</strong> Ukrainien, Russe (natif), Français (B1), Anglais (B1), Polonais (A1)
-          </p>
-        </div>
-      </section>
+     {/* À propos */}
+<section id="apropos" className="py-16 bg-white" data-aos="fade-up">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-bold mb-10 text-center">Обо мне</h2>
+
+    <div className="grid md:grid-cols-2 gap-8 items-start">
+      {/* Текст */}
+      <div className="space-y-6 text-gray-800 leading-relaxed">
+        <p>
+          Привет 👋 Я работаю с <strong>Angular</strong>, 
+          <strong> React</strong>, <strong>Next.js</strong> и 
+          <strong> TypeScript</strong>. За эстетику в проектах у меня отвечает 
+          <strong> Tailwind CSS</strong>. Иногда заглядываю и в бэкенд — 
+          <strong> Spring Boot</strong> или <strong>Node.js</strong>.
+        </p>
+
+        <p>
+          Сейчас я учусь в <strong>Web@cademie d’Epitech (Франция)</strong> и 
+          постоянно прокачиваюсь через разные проекты: от платформы для 
+          поддержки психического здоровья <em>(MindCare)</em> до своего портфолио 
+          <em>(One Life – One Page)</em> и даже RPG-игры.
+        </p>
+
+        <p>
+          Мне нравится совмещать дизайн и код, искать решения через детали и 
+          строить всё так, чтобы пользователю было максимально просто и приятно. 
+          Помимо веба, увлекаюсь графикой в <strong>Photoshop</strong> и 
+          <strong> Illustrator</strong>, люблю разбираться в логике процессов и 
+          открывать новые направления.
+        </p>
+
+        <p>
+          Для меня разработка — это не только код, но и возможность создавать 
+          проекты, которые действительно работают для людей 🚀
+        </p>
+      </div>
+
+      {/* Дополнительный блок — языки */}
+      <div className="bg-gray-50 rounded-2xl p-6 shadow-sm">
+        <h3 className="text-xl font-semibold mb-4">Языки</h3>
+        <ul className="space-y-2 text-gray-700">
+          <li>🇺🇦 Украинский, 🇷🇺 Русский (родные)</li>
+          <li>🇫🇷 Французский — B1</li>
+          <li>🇬🇧 Английский — B1</li>
+          <li>🇵🇱 Польский — A1</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Compétences */}
       <section id="competences" className="py-16 bg-gray-50">
@@ -72,8 +120,8 @@ export default function HomePage() {
               <h3 className="text-2xl font-semibold mb-4">Compétences techniques</h3>
               <div className="flex flex-wrap">
                 {[
-                  "HTML","CSS","JS","PHP","Angular","Tailwind","TypeScript","Adobe Photoshop","Adobe Illustrator",
-                  "React","NextJS","Kotlin","MySQL","MongoDB","GitHub","Figma",
+                  "HTML", "CSS", "JS", "PHP", "Angular", "Tailwind", "TypeScript", "Adobe Photoshop", "Adobe Illustrator",
+                  "React", "NextJS", "Kotlin", "MySQL", "MongoDB", "GitHub", "Figma",
                 ].map((t) => (
                   <span key={t} className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">
                     {t}
@@ -86,7 +134,7 @@ export default function HomePage() {
             <div className="w-1/2" data-aos="fade-up">
               <h3 className="text-2xl font-semibold mb-4">Compétences personnelles</h3>
               <div className="flex flex-wrap">
-                {["Travail en groupe","Autonomie","Sociable","Gestion du stress"].map((t) => (
+                {["Travail en groupe", "Autonomie", "Sociable", "Gestion du stress"].map((t) => (
                   <span key={t} className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">
                     {t}
                   </span>
@@ -185,6 +233,8 @@ export default function HomePage() {
           />
         </div>
       </section>
+
+      <ContactForm />
 
       {/* Contact */}
       <section id="contact" className="py-16 bg-white" data-aos="fade-up">
