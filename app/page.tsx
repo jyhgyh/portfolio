@@ -106,15 +106,13 @@ export default function HomePage() {
                 </ul>
               </div>
               <div className="bg-gray-50 rounded-2xl mt-6 px-6 pb-4 pt-3 shadow-sm">
-                {/* <div className=""> */}
                 <h3 className="text-xl font-semibold mb-3">Личные качества</h3>
                 <ul className="text-gray-800 space-y-1">
                   <li>🤝 Работа в команде</li>
-                  <li>🎯 Автономность</li>
+                  <li>🎯 Внимание к мелочам</li>
                   <li>🙂 Коммуникабельность</li>
                   <li>💪 Умение справляться со стрессом</li>
                 </ul>
-                {/* </div> */}
               </div>
             </div>
           </div>
@@ -125,33 +123,46 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-10 text-center">Compétences</h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Techniques */}
-            <div className="bg-white rounded-2xl shadow-sm p-6" data-aos="fade-up">
-              <h3 className="text-2xl font-semibold mb-4">Compétences techniques</h3>
-
-              <h4 className="font-medium text-gray-700 mb-2">Frontend</h4>
-              <div className="flex flex-wrap mb-4">
-                {["HTML", "CSS", "JS", "Angular", "React", "NextJS", "TypeScript", "Tailwind"].map((t) => (
-                  <span key={t} className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">
-                    {t}
-                  </span>
-                ))}
-              </div>
-
-              <h4 className="font-medium text-gray-700 mb-2">Backend & Bases de données</h4>
-              <div className="flex flex-wrap mb-4">
-                {["PHP", "MySQL", "MongoDB"].map((t) => (
-                  <span key={t} className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">
-                    {t}
-                  </span>
-                ))}
-              </div>
-
-              <h4 className="font-medium text-gray-700 mb-2">Outils & Design</h4>
+          <div className="grid md:grid-cols-3 gap-8" data-aos="fade-up">
+            {/* Frontend */}
+            <div className="bg-white rounded-2xl shadow-sm p-6">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">Frontend</h3>
               <div className="flex flex-wrap">
-                {["Adobe Photoshop", "Adobe Illustrator", "Figma", "GitHub", "Kotlin"].map((t) => (
-                  <span key={t} className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2">
+                {["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "React", "Next.js", "Tailwind"].map((t) => (
+                  <span
+                    key={t}
+                    className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Backend & DB */}
+            <div className="bg-white rounded-2xl shadow-sm p-6">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">Backend & Bases de données</h3>
+              <div className="flex flex-wrap">
+                {["PHP", "MySQL", "MongoDB", "Kotlin"].map((t) => (
+                  <span
+                    key={t}
+                    className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Outils & Design */}
+            <div className="bg-white rounded-2xl shadow-sm p-6">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">Outils & Design</h3>
+              <div className="flex flex-wrap">
+                {["Adobe Photoshop", "Adobe Illustrator", "Figma", "Git", "Magie"].map((t) => (
+                  <span
+                    key={t}
+                    className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2"
+                  >
                     {t}
                   </span>
                 ))}
@@ -161,13 +172,12 @@ export default function HomePage() {
         </div>
       </section>
 
-
       {/* Projets */}
       <section id="projets" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Projets</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">Проекты, в которые вложил часть себя</h2>
+        <div className="container grid md:grid-cols-2 mx-auto px-4">
 
-          <div className="mb-8 p-6 bg-gray-100 rounded-lg hover:shadow-lg transition-shadow" data-aos="fade-up">
+          <div className="mb-8 p-6 m-2 bg-gray-100 rounded-lg hover:shadow-lg transition-shadow" data-aos="fade-up">
             <h3 className="text-2xl font-semibold mb-2">Mobalpa E-commerce</h3>
             <p className="text-gray-800 mb-1">
               J&apos;ai participé au développement en équipe d&apos;une plateforme de commerce électronique pour
@@ -181,7 +191,7 @@ export default function HomePage() {
 
           <Link href="https://amanogawa.space/" target="_blank" rel="noopener">
             <div
-              className="mb-8 p-6 bg-gray-100 rounded-lg hover:shadow-lg transition-shadow cursor-pointer"
+              className="mb-8 p-6 bg-gray-100 m-2 rounded-lg hover:shadow-lg transition-shadow cursor-pointer"
               data-aos="fade-up"
               data-aos-delay="100"
             >
@@ -201,15 +211,15 @@ export default function HomePage() {
 
       {/* Formation */}
       <section id="formation" className="py-16 bg-gray-50" data-aos="fade-up">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center">Formation</h2>
+        <div className="max-w-3/4 mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8 text-center">Учёба, которая меня сформировала</h2>
 
           <EduCard
             years="2023-2025"
             title="Web@cadémie by Epitech"
             country="France"
             city="Marseille"
-            level="Formation Développeur Web (en cours)"
+            level="Développeur Web (en cours)"
             link="https://www.webacademie.org/"
           />
 
@@ -236,7 +246,7 @@ export default function HomePage() {
             title="IT STEP"
             country="Ukraine"
             city="Kyiv"
-            level="Formation Webdesign"
+            level="Webdesign"
             link="https://itstep.org/"
           />
 
@@ -245,7 +255,7 @@ export default function HomePage() {
             title="Club Key"
             country="Ukraine"
             city="Kyiv"
-            level="Formation Web-general"
+            level="Web-general"
             link="https://www.clubkey.com.ua/"
           />
         </div>
@@ -326,13 +336,15 @@ function EduCard({
         <span className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2 inline-block">
           {years}
         </span>
+        <span className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2 inline-block">
+          <strong>{country}&nbsp;:</strong>{city}
+        </span>
+        <span className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2 inline-block">
+          {level}
+        </span>
         <h3 className="text-2xl font-semibold mb-2">{title}</h3>
         <p className="text-gray-800 mb-1">
-          <strong>{level}</strong>
-        </p>
-        <p className="text-gray-600 text-sm">
-          <strong>{country}&nbsp;:</strong>
-          {city}
+          
         </p>
         <p className="text-gray-600 text-sm">
           <strong>Description&nbsp;:</strong>

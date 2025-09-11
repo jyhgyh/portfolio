@@ -1,0 +1,16 @@
+About Me
+
+Hi there! 👋 I’m a front-end developer who loves turning ideas into clean, user-friendly, and beautiful websites.
+I work with Angular, React, Next.js, and TypeScript, and when it comes to styling and aesthetics, Tailwind CSS is my go-to. From time to time, I also dive into the backend — using Spring Boot or Node.js — to better understand the full picture of a project.
+
+I’m currently studying at Web@cademie (Epitech, France) and constantly improving my skills through different projects: from a mental health support platform (MindCare) to my portfolio website (One Life – One Page) and even an RPG game.
+
+What I enjoy the most is combining design with code, paying attention to details, and making sure that everything feels simple and pleasant for the user. Beyond web development, I also work with Photoshop and Illustrator, enjoy exploring logic and processes, and love discovering new fields.
+
+For me, coding isn’t just about writing code — it’s about creating projects that truly work for people. 🚀
+
+
+
+Education That Shaped Me
+
+Projects I Poured Myself Into	

@@ -15,7 +15,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-white fixed w-full top-0 z-50 shadow">
+    <header className="bg-white/30 backdrop-blur-sm fixed w-full top-0 z-50 shadow">
       <nav
         className="container mx-auto px-4 py-4 flex justify-between items-center"
         role="navigation"
@@ -27,7 +27,7 @@ export default function Header() {
 
         <ul
           id="nav-menu"
-          className={`flex flex items-center space-x-6 absolute static bg-white bg-transparent w-full left-0 top-full text-center text-left`}
+          className={`flex flex items-center space-x-6 absolute static bg-transparent w-full left-0 top-full text-center text-left`}
         >
           {navItems.map((item) => (
             <li key={item.href} className="my-2 my-0">
