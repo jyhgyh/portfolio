@@ -95,25 +95,15 @@ export default function HomePage() {
             </div>
 
             {/* Дополнительный блок — языки */}
-            <div>
-              <div className="bg-gray-50 rounded-2xl p-6 shadow-sm">
-                <h3 className="text-xl font-semibold mb-4">Языки</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li>🇺🇦 Украинский, 🇷🇺 Русский (родные)</li>
-                  <li>🇫🇷 Французский — B1</li>
-                  <li>🇬🇧 Английский — B1</li>
-                  <li>🇵🇱 Польский — A1</li>
-                </ul>
-              </div>
-              <div className="bg-gray-50 rounded-2xl mt-6 px-6 pb-4 pt-3 shadow-sm">
-                <h3 className="text-xl font-semibold mb-3">Личные качества</h3>
-                <ul className="text-gray-800 space-y-1">
-                  <li>🤝 Работа в команде</li>
-                  <li>🎯 Внимание к мелочам</li>
-                  <li>🙂 Коммуникабельность</li>
-                  <li>💪 Умение справляться со стрессом</li>
-                </ul>
-              </div>
+            <div className="space-y-3">
+              <AboutCard
+              title="Языки"
+              skills={["🇺🇦 Украинский, 🇷🇺 Русский (родные)", "🇫🇷 Французский — B1", "🇬🇧 Английский — B1", "🇵🇱 Польский — A1"]}
+              />  
+              <AboutCard
+              title="Личные качества"
+              skills={["🤝 Работа в команде", "🎯 Внимание к мелочам", "🙂 Коммуникабельность", "💪 Умение справляться со стрессом"]}
+              />
             </div>
           </div>
         </div>
@@ -125,49 +115,22 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-8" data-aos="fade-up">
             {/* Frontend */}
-            <div className="bg-white rounded-2xl shadow-sm p-6">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">Frontend</h3>
-              <div className="flex flex-wrap">
-                {["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "React", "Next.js", "Tailwind"].map((t) => (
-                  <span
-                    key={t}
-                    className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <SkillCard
+              title="Frontend"
+              skills={["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "React", "Next.js", "Tailwind"]}
+            />
 
             {/* Backend & DB */}
-            <div className="bg-white rounded-2xl shadow-sm p-6">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">Backend & Bases de données</h3>
-              <div className="flex flex-wrap">
-                {["PHP", "MySQL", "MongoDB", "Kotlin"].map((t) => (
-                  <span
-                    key={t}
-                    className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <SkillCard
+              title="Backend & Bases de données"
+              skills={["PHP", "MySQL", "MongoDB", "Kotlin"]}
+            />
 
             {/* Outils & Design */}
-            <div className="bg-white rounded-2xl shadow-sm p-6">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">Outils & Design</h3>
-              <div className="flex flex-wrap">
-                {["Adobe Photoshop", "Adobe Illustrator", "Figma", "Git", "Magie"].map((t) => (
-                  <span
-                    key={t}
-                    className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <SkillCard
+              title="Outils & Design"
+              skills={["Adobe Photoshop", "Adobe Illustrator", "Figma", "Git", "Magie"]}
+            />
           </div>
         </div>
       </section>
@@ -177,41 +140,31 @@ export default function HomePage() {
         <h2 className="text-3xl font-bold mb-8 text-center">Проекты, в которые вложил часть себя</h2>
         <div className="container grid md:grid-cols-2 mx-auto px-4">
 
-          <div className="mb-8 p-6 m-2 bg-gray-100 rounded-lg hover:shadow-lg transition-shadow" data-aos="fade-up">
-            <h3 className="text-2xl font-semibold mb-2">Mobalpa E-commerce</h3>
-            <p className="text-gray-800 mb-1">
-              J&apos;ai participé au développement en équipe d&apos;une plateforme de commerce électronique pour
+          <ProCard
+            years="2024"
+            title="Mobalpa E-commerce"
+            description=" J&apos;ai participé au développement en équipe d&apos;une plateforme de commerce électronique pour
               Mobalpa à l&apos;aide d&apos;Angular, TypeScript et Tailwind CSS, en me concentrant sur le front-end et
-              l&apos;intégration de l&apos;API.
-            </p>
-            <p className="text-gray-600 text-sm">
-              <strong>Technologies&nbsp;:</strong> Angular, TypeScript, Tailwind-CSS, MySQL, MongoDB, Figma
-            </p>
-          </div>
+              l&apos;intégration de l&apos;API."
+            technologies="Angular, TypeScript, Tailwind-CSS, MySQL, MongoDB, Figma"
+            link="https://github.com/twnguydev/mobalpa"
+          />
 
-          <Link href="https://amanogawa.space/" target="_blank" rel="noopener">
-            <div
-              className="mb-8 p-6 bg-gray-100 m-2 rounded-lg hover:shadow-lg transition-shadow cursor-pointer"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <h3 className="text-2xl font-semibold mb-2">Amanogawa Website</h3>
-              <p className="text-gray-800 mb-1">
-                J&apos;ai participé au développement du site web <em>Amanogawa</em> à l&apos;aide de HTML, Tailwind CSS et
+          <ProCard
+            years="2024-2025"
+            title="Amonogawa"
+            description="J&apos;ai participé au développement du site web <em>Amanogawa</em> à l&apos;aide de HTML, Tailwind CSS et
                 JavaScript, en assurant une conception adaptative et des animations interactives pour une expérience
-                utilisateur dynamique.
-              </p>
-              <p className="text-gray-600 text-sm">
-                <strong>Technologies&nbsp;:</strong> HTML, Tailwind CSS, JavaScript
-              </p>
-            </div>
-          </Link>
+                utilisateur dynamique."
+            technologies="HTML, Tailwind CSS, JavaScript"
+            link="https://amanogawa.space/"
+          />
         </div>
       </section>
 
       {/* Formation */}
       <section id="formation" className="py-16 bg-gray-50" data-aos="fade-up">
-        <div className="max-w-3/4 mx-auto px-4">
+        <div className="max-w-1/2 mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-center">Учёба, которая меня сформировала</h2>
 
           <EduCard
@@ -220,6 +173,7 @@ export default function HomePage() {
             country="France"
             city="Marseille"
             level="Développeur Web (en cours)"
+            description='Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.'
             link="https://www.webacademie.org/"
           />
 
@@ -229,6 +183,7 @@ export default function HomePage() {
             country="France"
             city="Marseille"
             level="lycée general"
+            description='Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.'
             link="https://www.lacordaire.com/"
           />
 
@@ -238,6 +193,7 @@ export default function HomePage() {
             country="Ukraine"
             city="Kyiv"
             level="Spécialisation Magicien"
+            description='Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.'
             link="https://www.fedec.eu/en/members/380-kmacpa-kyiv-municipal-academy-of-performing-and-circus-arts"
           />
 
@@ -247,6 +203,7 @@ export default function HomePage() {
             country="Ukraine"
             city="Kyiv"
             level="Webdesign"
+            description='Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.'
             link="https://itstep.org/"
           />
 
@@ -256,6 +213,7 @@ export default function HomePage() {
             country="Ukraine"
             city="Kyiv"
             level="Web-general"
+            description='Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.'
             link="https://www.clubkey.com.ua/"
           />
         </div>
@@ -321,6 +279,7 @@ function EduCard({
   level,
   country,
   city,
+  description,
   link,
 }: {
   years: string;
@@ -328,6 +287,7 @@ function EduCard({
   level: string;
   country: string;
   city: string;
+  description: string;
   link: string;
 }) {
   return (
@@ -344,12 +304,89 @@ function EduCard({
         </span>
         <h3 className="text-2xl font-semibold mb-2">{title}</h3>
         <p className="text-gray-800 mb-1">
-          
+
         </p>
         <p className="text-gray-600 text-sm">
-          <strong>Description&nbsp;:</strong>
+          <strong>Description&nbsp;:{description}</strong>
         </p>
       </div>
     </Link>
   );
+}
+
+function ProCard({
+  title,
+  years,
+  description,
+  technologies,
+  link
+}: {
+  title: string
+  years: string
+  description: string
+  technologies: string
+  link: string
+}) {
+  return (
+    <Link href={link} target="_blank" rel="noopener">
+      <div
+        className="mb-8 p-6 bg-gray-100 m-2 rounded-lg hover:shadow-lg transition-shadow cursor-pointer"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <h3 className="text-2xl font-semibold mb-2">{title}</h3>
+        <p className="text-gray-800 mb-1">
+          {description}
+        </p>
+        <p className="text-gray-600 text-sm">
+          <strong>Technologies&nbsp;:</strong> {technologies}
+        </p>
+      </div>
+    </Link>
+  )
+}
+
+function SkillCard({
+  title,
+  skills,
+}: {
+  title: string
+  skills: string[]
+}) {
+  return (
+    <div className="bg-white rounded-2xl shadow-sm p-6">
+      <h3 className="text-xl font-semibold mb-4 text-gray-800">{title}</h3>
+      <div className="flex flex-wrap">
+        {skills.map((skill) => (
+          <span
+            key={skill}
+            className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2"
+          >
+            {skill}
+          </span>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function AboutCard({
+  title,
+  skills,
+}: {
+  title: string
+  skills: string[]
+}) {
+  return (
+    <div className="bg-gray-50 rounded-2xl p-6 shadow-sm">
+      <h3 className="text-xl font-semibold mb-4">{title}</h3>
+      <ul className="space-y-2 text-gray-700">
+        {skills.map((skill)  => (
+          <li key={skill}>
+            {skill}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
 }
