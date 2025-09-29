@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 
-const TAGS = ["Ошибка", "Предложение", "Вопрос", "Другое"];
+const TAGS = ["Пердложение о работе", "Вопрос", "Другое"];
 
 export default function StepContactForm() {
   const [step, setStep] = useState(1);
@@ -56,10 +56,10 @@ export default function StepContactForm() {
     <div className="max-w-xl mx-auto p-8 bg-white shadow-md rounded-2xl border border-gray-100">
       {/* Заголовок + описание */}
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-800">Связаться со мной</h2>
+        <h2 className="text-3xl font-bold text-gray-800">Хотите связаться со мной?</h2>
         <p className="mt-3 text-gray-600 text-lg">
-          Есть идея, которой хотите поделиться?  
-          Давайте обсудим как я могу вам помочь воплотить ее быстрее.
+          {/* Есть идея, которой хотите поделиться?   */}
+          Давайте обсудим как я могу вам помочь воплотить {/*ее*/} ваши идеии быстрее.
         </p>
       </div>
 
@@ -69,7 +69,7 @@ export default function StepContactForm() {
             <p className="text-sm text-gray-500 font-medium">Шаг 1 из 2</p>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">Имя</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1">Как вас зовут?</label>
               <input
                 type="text"
                 name="name"
@@ -81,7 +81,7 @@ export default function StepContactForm() {
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">Email</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1">На какой Email мне отправить ответ?</label>
               <input
                 type="email"
                 name="email"
@@ -107,7 +107,7 @@ export default function StepContactForm() {
             <p className="text-sm text-gray-500 font-medium">Шаг 2 из 2</p>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">Сообщение</label>
+              <label className="block text-sm font-semibold text-gray-700 mb-1">Я внимательно вас слушаю!</label>
               <textarea
                 name="message"
                 value={formData.message}
