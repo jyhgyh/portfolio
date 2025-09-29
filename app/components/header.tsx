@@ -21,13 +21,13 @@ export default function Header() {
         role="navigation"
         aria-label="Primary"
       >
-        <div className="text-2xl font-bold">
+        <div className="text-2xl text-text-pink font-bold">
           <a href="#accueil">Rinat Hirfanov</a>
         </div>
 
         <ul
           id="nav-menu"
-          className={`flex flex items-center space-x-6 absolute static bg-transparent w-full left-0 top-full text-center text-left`}
+          className={`flex flex text-text-pink items-center space-x-6 absolute static bg-transparent w-full left-0 top-full text-center text-left`}
         >
           {navItems.map((item) => (
             <li key={item.href} className="my-2 my-0">
