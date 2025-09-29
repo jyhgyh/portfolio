@@ -7,6 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Header from "./components/header";
 import ContactForm from "./components/ContactForm";
+import Accueil from "./components/accueil";
 
 export default function HomePage() {
   // const [open, setOpen] = useState(false);
@@ -20,7 +21,7 @@ export default function HomePage() {
       <Header />
 
       {/* Accueil */}
-      <section id="accueil" className="pt-20 min-h-screen flex items-center bg-base-mid">
+      {/* <section id="accueil" className="pt-20 min-h-screen flex items-center bg-base-mid">
         <div className="container mx-auto px-4 flex flex-col flex-row items-center">
           <div className="w-1/2 text-center text-left" data-aos="fade-right">
             <h1 className="text-6xl font-medium text-text-primary mb-4">Salut Je m&apos;appelle Rinat!👋</h1>
@@ -55,7 +56,8 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      <Accueil />
 
       {/* À propos */}
       <section id="apropos" className="py-16 bg-base-light" data-aos="fade-up">
