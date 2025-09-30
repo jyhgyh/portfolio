@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const TAGS = ["Предложение о работе", "Вопрос", "Другое"];
+const TAGS = ["Offre d'emploi", "Question", "Autres"];
 
 export default function StepContactForm() {
   const [step, setStep] = useState(1);
@@ -37,7 +37,7 @@ export default function StepContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      console.log("Отправка данных:", formData);
+      console.log("Envoi de données:", formData);
       setStatus("success");
       setFormData({ name: "", email: "", message: "", tags: [] });
       setStep(1);
@@ -90,7 +90,7 @@ export default function StepContactForm() {
                 onClick={handleNext}
                 className="w-full mt-4 py-3 rounded-lg bg-accent-blue text-white font-medium hover:bg-accent-red transition"
               >
-                Далее →
+                Plus loin →
               </button>
             </>
           )}
@@ -134,13 +134,13 @@ export default function StepContactForm() {
                   onClick={handleBack}
                   className="px-4 py-2 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition"
                 >
-                  ← Назад
+                  ← Retour
                 </button>
                 <button
                   type="submit"
                   className="px-6 py-2 rounded-lg bg-accent-blue text-white font-medium hover:bg-accent-red transition"
                 >
-                  Отправить
+                  Envoyer
                 </button>
               </div>
             </>
@@ -148,10 +148,10 @@ export default function StepContactForm() {
         </form>
 
         {status === "success" && (
-          <p className="mt-6 text-green-600 text-center text-sm">✅ Спасибо! Ваше сообщение успешно отправлено.</p>
+          <p className="mt-6 text-green-600 text-center text-sm">✅ Merci d’avoir répondu à ce questionnaire. Votre message a été envoyé avec succès.</p>
         )}
         {status === "error" && (
-          <p className="mt-6 text-red-600 text-center text-sm">❌ Произошла ошибка. Попробуйте снова.</p>
+          <p className="mt-6 text-red-600 text-center text-sm">❌ Une erreur s’est produite. Réessayez.</p>
         )}
       </div>
     </div>

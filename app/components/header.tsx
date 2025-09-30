@@ -12,6 +12,7 @@ export default function Header() {
     { href: "#projets", label: "Projets" },
     { href: "#formation", label: "Formation" },
     { href: "#contact", label: "Contact" },
+    // { href: "", label: "CV" },
   ];
 
   return (
@@ -40,6 +41,9 @@ export default function Header() {
               </a>
             </li>
           ))}
+          <li>
+                <a href="" className="ml-2 text-text-red hover:text-blue-600">CV</a>
+          </li>
         </ul>
       </nav>
     </header>
