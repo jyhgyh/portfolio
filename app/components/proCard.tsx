@@ -7,9 +7,12 @@ type Project = {
   title: string;
   years: string;
   description: string;
+  descriptionMain: "",
   technologies: string[];
   link: string;
+  linkGit: string,
   category: "work" | "study";
+  rnpc: string,
   img: string;
 };
 
@@ -19,73 +22,97 @@ const projects: Project[] = [
     title: "Mobalpa E-commerce",
     description:
       "Développement d'une plateforme e-commerce pour Mobalpa avec Angular, TypeScript et Tailwind.",
-    technologies: ["Angular", "TypeScript", "Tailwind CSS", "MySQL", "MongoDB", "Figma", "Java"],
-    link: "https://github.com/twnguydev/mobalpa",
+    descriptionMain: "",
+      technologies: ["Angular", "TypeScript", "Tailwind CSS", "MySQL", "MongoDB", "Figma", "Java"],
+    link: "",
+    linkGit: "https://github.com/twnguydev/mobalpa",
     category: "study",
-    img: "../publik",
+    rnpc: "",
+    img: "",
 },
   {
     years: "2024-2025",
     title: "Amanogawa",
     description:
       "Développement du site Amanogawa avec HTML, Tailwind CSS et JavaScript (projet de travail).",
-    technologies: ["HTML", "Tailwind CSS", "JavaScript", "Figma"],
+    descriptionMain: "",
+      technologies: ["HTML", "Tailwind CSS", "JavaScript", "Figma"],
     link: "https://amanogawa.space/",
+    linkGit: "",
     category: "work",
-    img: "../publik",
+    rnpc: "",
+    img: "",
 },
   {
     years: "2024-2025",
     title: "Mindcare",
     description: "Plateforme web collaborative sur la santé mentale.",
+    descriptionMain: "",
     technologies: ["Angular", "TypeScript", "SpringBoot", "MySQL", "Tailwind CSS", "Docker"],
     link: "",
+    linkGit: "",
     category: "study",
-    img: "../publik",
+    rnpc: "",
+    img: "",
 },
   {
     years: "2025",
     title: "Mobile App",
     description: "Application Android avec Kotlin.",
+    descriptionMain: "",
     technologies: ["Kotlin"],
     link: "",
+    linkGit: "",
     category: "study",
-    img: "../publik",
+    rnpc: "",
+    img: "",
 },
   {
     years: "2024",
     title: "Series Tracker",
     description: "SeriesTracker est une application conçue pour vous aider à gérer vos séries télévisées. Elle vous permet de suivre les épisodes que vous avez regardés, de découvrir de nouvelles séries et de partager votre expérience avec vos amis. L'application est construite à l'aide de l'API BetaSeries, qui fournit des outils puissants et pratiques pour interagir avec les données des séries télévisées. ",
+    descriptionMain: "",
     technologies: ["Angular", "Tailwind CSS", "REST API"],
     link: "",
+    linkGit: "",
     category: "study",
-    img: "../publik",
+    rnpc: "",
+    img: "",
 },
   {
     years: "2024",
     title: "Hackathon",
     description: "Projet d'équipe React + Python.",
+    descriptionMain: "",
     technologies: ["React", "Tailwind CSS", "Python"],
     link: "",
+    linkGit: "",
     category: "study",
-    img: "../publik",
+    rnpc: "",
+    img: "",
 },
   {
     years: "2024",
     title: "MyCinema",
     description: "Projet PHP/MySQL de gestion de films.",
+    descriptionMain: "",
     technologies: ["HTML", "CSS", "PHP", "MySQL"],
     link: "",
+    linkGit: "",
     category: "study",
-    img: "../publik",
+    rnpc: "",
+    img: "",
 },
   {
     years: "2024",
     title: "Civic",
     description: "Projet scolaire Angular + Tailwind.",
+    descriptionMain: "",
     technologies: ["Angular", "Tailwind CSS", "Figma"],
     link: "",
+    linkGit: "",
     category: "study",
+    rnpc: "",
     img: "/Rinat.jpg",
 },
 ];
@@ -197,10 +224,10 @@ export default function ProjectsSection() {
               </span>
             </div>
 
-            <img src={activeProject.img} alt="Project photo" />
+            <img src={activeProject.img} alt="Project photo"/>
 
             {/* Описание */}
-            <p className="text-gray-700 dark:text-gray-300 mb-4">{activeProject.description}</p>
+            <p className="text-gray-700 dark:text-gray-300 mb-4">{activeProject.descriptionMain}</p>
 
             {/* Технологии */}
             <p className="text-text-secondary text-sm mb-4">
