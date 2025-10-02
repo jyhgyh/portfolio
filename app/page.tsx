@@ -9,7 +9,7 @@ import Header from "./components/header";
 import ContactForm from "./components/ContactForm";
 import Accueil from "./components/accueil";
 import ProjectsSection from "./components/proCard";
-import Projects from "./components/projects";
+// import Projects from "./components/projects";
 
 export default function HomePage() {
   // const [open, setOpen] = useState(false);

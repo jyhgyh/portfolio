@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 type Project = {
   title: string;
   years: string;
   description: string;
-  descriptionMain: "",
+  descriptionMain: string,
   technologies: string[];
   link: string;
   linkGit: string,
@@ -23,38 +24,38 @@ const projects: Project[] = [
     description:
       "Développement d'une plateforme e-commerce pour Mobalpa avec Angular, TypeScript et Tailwind.",
     descriptionMain: "",
-      technologies: ["Angular", "TypeScript", "Tailwind CSS", "MySQL", "MongoDB", "Figma", "Java"],
+    technologies: ["Angular", "TypeScript", "Tailwind CSS", "MySQL", "MongoDB", "Figma", "Java"],
     link: "",
     linkGit: "https://github.com/twnguydev/mobalpa",
     category: "study",
     rnpc: "",
     img: "",
-},
+  },
   {
     years: "2024-2025",
     title: "Amanogawa",
     description:
       "Développement du site Amanogawa avec HTML, Tailwind CSS et JavaScript (projet de travail).",
     descriptionMain: "",
-      technologies: ["HTML", "Tailwind CSS", "JavaScript", "Figma"],
+    technologies: ["HTML", "Tailwind CSS", "JavaScript", "Figma"],
     link: "https://amanogawa.space/",
     linkGit: "",
     category: "work",
     rnpc: "",
     img: "",
-},
+  },
   {
     years: "2024-2025",
     title: "Mindcare",
     description: "Plateforme web collaborative sur la santé mentale.",
-    descriptionMain: "",
+    descriptionMain: "SeriesTracker est une application conçue pour vous aider à gérer vos séries télévisées. Elle vous permet de suivre les épisodes que vous avez regardés, de découvrir de nouvelles séries et de partager votre expérience avec vos amis. L'application est construite à l'aide de l'API BetaSeries, qui fournit des outils puissants et pratiques pour interagir avec les données des séries télévisées.",
     technologies: ["Angular", "TypeScript", "SpringBoot", "MySQL", "Tailwind CSS", "Docker"],
-    link: "",
-    linkGit: "",
+    link: "https://mind-care.fr/",
+    linkGit: "https://github.com/MindCareFR/mindcare",
     category: "study",
     rnpc: "",
-    img: "",
-},
+    img: "/MindCare.png",
+  },
   {
     years: "2025",
     title: "Mobile App",
@@ -66,11 +67,11 @@ const projects: Project[] = [
     category: "study",
     rnpc: "",
     img: "",
-},
+  },
   {
     years: "2024",
     title: "Series Tracker",
-    description: "SeriesTracker est une application conçue pour vous aider à gérer vos séries télévisées. Elle vous permet de suivre les épisodes que vous avez regardés, de découvrir de nouvelles séries et de partager votre expérience avec vos amis. L'application est construite à l'aide de l'API BetaSeries, qui fournit des outils puissants et pratiques pour interagir avec les données des séries télévisées. ",
+    description: "SeriesTracker est une application conçue pour vous aider à gérer vos séries télévisées. Elle vous permet de suivre les épisodes que vous avez regardés, de découvrir de nouvelles séries et de partager votre expérience avec vos amis. L'application est construite à l'aide de l'API BetaSeries, qui fournit des outils puissants et pratiques pour interagir avec les données des séries télévisées.",
     descriptionMain: "",
     technologies: ["Angular", "Tailwind CSS", "REST API"],
     link: "",
@@ -78,7 +79,7 @@ const projects: Project[] = [
     category: "study",
     rnpc: "",
     img: "",
-},
+  },
   {
     years: "2024",
     title: "Hackathon",
@@ -90,7 +91,7 @@ const projects: Project[] = [
     category: "study",
     rnpc: "",
     img: "",
-},
+  },
   {
     years: "2024",
     title: "MyCinema",
@@ -102,7 +103,7 @@ const projects: Project[] = [
     category: "study",
     rnpc: "",
     img: "",
-},
+  },
   {
     years: "2024",
     title: "Civic",
@@ -114,7 +115,7 @@ const projects: Project[] = [
     category: "study",
     rnpc: "",
     img: "/Rinat.jpg",
-},
+  },
 ];
 
 function ProCard({ project, onClick }: { project: Project; onClick: () => void }) {
@@ -165,9 +166,8 @@ export default function ProjectsSection() {
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat as "all" | "work" | "study")}
-            className={`px-4 py-2 rounded-full border ${
-              selectedCategory === cat ? "bg-blue-500 text-white" : "bg-gray-100 text-gray-700"
-            }`}
+            className={`px-4 py-2 rounded-full border ${selectedCategory === cat ? "bg-blue-500 text-white" : "bg-gray-100 text-gray-700"
+              }`}
           >
             {cat === "all" ? "Tous" : cat === "work" ? "Travail" : "Études"}
           </button>
@@ -180,11 +180,10 @@ export default function ProjectsSection() {
           <button
             key={tech}
             onClick={() => setSelectedTech(selectedTech === tech ? null : tech)}
-            className={`px-3 py-1.5 text-sm rounded-full border transition ${
-              selectedTech === tech
-                ? "bg-blue-500 text-white border-blue-500"
-                : "bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200"
-            }`}
+            className={`px-3 py-1.5 text-sm rounded-full border transition ${selectedTech === tech
+              ? "bg-blue-500 text-white border-blue-500"
+              : "bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200"
+              }`}
           >
             {tech}
           </button>
@@ -207,33 +206,42 @@ export default function ProjectsSection() {
       {/* Модалка */}
       {activeProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-md bg-black/50">
-          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg max-w-2xl w-full p-6 relative">
+          <div className="bg-base rounded-lg shadow-lg w-full max-h-[80vh] max-w-[70vw] p-6 relative overflow-y-auto">
             {/* Закрыть */}
             <button
               onClick={() => setActiveProject(null)}
-              className="absolute top-4 right-4 text-gray-600 hover:text-gray-900 dark:hover:text-white"
+              className="absolute text-xl top-2 right-3 text-red-800 hover:text-red-500"
             >
               ✕
             </button>
 
             {/* Заголовок */}
-            <div className="flex justify-between items-center mb-4">
+            <div className="flex items-center mb-4">
               <h3 className="text-2xl font-bold text-text-primary">{activeProject.title}</h3>
-              <span className="bg-base-light text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
+              <span className="bg-base-light text-gray-800 px-3 py-1 ml-2 rounded-full text-sm font-medium">
                 {activeProject.years}
               </span>
             </div>
 
-            <img src={activeProject.img} alt="Project photo"/>
-
-            {/* Описание */}
-            <p className="text-gray-700 dark:text-gray-300 mb-4">{activeProject.descriptionMain}</p>
-
+            {activeProject.img && (
+              <div className="mb-4 mx-auto relative w-[60vw] h-[60vh]">
+                <Image
+                  src={activeProject.img}
+                  alt={`Image du projet ${activeProject.title}`}
+                  fill
+                  className="rounded-lg w-full h-auto object-cover"
+                />
+              </div>
+            )}
+            
             {/* Технологии */}
-            <p className="text-text-secondary text-sm mb-4">
+            <p className="text-text-secondary text mb-2">
               <strong className="text-text-red">Technologies&nbsp;:</strong>{" "}
               {activeProject.technologies.join(", ")}
             </p>
+            
+            {/* Описание */}
+            <p className="text-gray-700 mb-4">{activeProject.descriptionMain}</p>
 
             {/* Кнопка на сайт */}
             {activeProject.link && (
@@ -241,9 +249,19 @@ export default function ProjectsSection() {
                 href={activeProject.link}
                 target="_blank"
                 rel="noopener"
-                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full"
+                className="inline-block bg-text-pink hover:bg-blue-700 text-white px-4 py-2 rounded-full mr-2"
               >
                 Voir le site
+              </Link>
+            )}
+            {activeProject.linkGit && (
+              <Link
+                href={activeProject.linkGit}
+                target="_blank"
+                rel="noopener"
+                className="inline-block bg-text-pink hover:bg-accent-hover text-white px-4 py-2 rounded-full"
+              >
+                Voir le code
               </Link>
             )}
           </div>
