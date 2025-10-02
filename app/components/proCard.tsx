@@ -264,6 +264,7 @@ export default function ProjectsSection() {
                 Voir le code
               </Link>
             )}
+            {/* Описание rnpc */} 
           </div>
         </div>
       )}

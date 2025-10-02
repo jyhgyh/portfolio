@@ -1,18 +1,14 @@
-// components/Header.tsx
-"use client";
-
-import "../globals.css";
+import { useState } from "react";
+import { Menu, X } from "lucide-react"; // иконки (lucide-react)
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
     { href: "#accueil", label: "Accueil" },
-    { href: "#apropos", label: "À propos" },
-    { href: "#competences", label: "Compétences" },
-    { href: "#projets", label: "Projets" },
-    { href: "#formation", label: "Formation" },
+    { href: "#about", label: "À propos" },
+    { href: "#projects", label: "Projets" },
     { href: "#contact", label: "Contact" },
-    // { href: "", label: "CV" },
   ];
 
   return (
@@ -22,30 +18,69 @@ export default function Header() {
         role="navigation"
         aria-label="Primary"
       >
+        {/* Логотип */}
         <div className="text-2xl text-text-pink font-bold">
           <a href="#accueil">Rinat Hirfanov</a>
         </div>
 
-        <ul
-          id="nav-menu"
-          className={`flex flex text-text-pink items-center space-x-6 absolute static bg-transparent w-full left-0 top-full text-center text-left`}
-        >
+        {/* Десктопное меню */}
+        <ul className="hidden md:flex text-text-pink items-center space-x-6">
           {navItems.map((item) => (
-            <li key={item.href} className="my-2 my-0">
+            <li key={item.href}>
               <a
                 href={item.href}
-                // onClick={closeMenu}
                 className="block px-4 py-2 hover:text-blue-600 transition-colors"
               >
-                <span>{item.label}</span>
+                {item.label}
               </a>
             </li>
           ))}
           <li>
-                <a href="" className="ml-2 text-text-red hover:text-blue-600">CV</a>
+            <a
+              href=""
+              className="ml-2 text-text-red hover:text-blue-600 transition-colors"
+            >
+              CV
+            </a>
           </li>
         </ul>
+
+        {/* Кнопка-бургер (только на мобилках) */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-text-pink focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </nav>
+
+      {/* Мобильное меню */}
+      {isOpen && (
+        <div className="md:hidden bg-white/90 backdrop-blur-sm shadow-lg">
+          <ul className="flex flex-col items-center py-4 space-y-2 text-text-pink">
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block px-4 py-2 hover:text-blue-600 transition-colors"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+            <li>
+              <a
+                href=""
+                className="ml-2 text-text-red hover:text-blue-600 transition-colors"
+              >
+                CV
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 }
