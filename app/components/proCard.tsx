@@ -1,122 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
-type Project = {
-  title: string;
-  years: string;
-  description: string;
-  descriptionMain: string,
-  technologies: string[];
-  link: string;
-  linkGit: string,
-  category: "work" | "study";
-  rnpc: string,
-  img: string;
-};
-
-const projects: Project[] = [
-  {
-    years: "2024",
-    title: "Mobalpa E-commerce",
-    description:
-      "Développement d'une plateforme e-commerce pour Mobalpa avec Angular, TypeScript et Tailwind.",
-    descriptionMain: "",
-    technologies: ["Angular", "TypeScript", "Tailwind CSS", "MySQL", "MongoDB", "Figma", "Java"],
-    link: "",
-    linkGit: "https://github.com/twnguydev/mobalpa",
-    category: "study",
-    rnpc: "",
-    img: "",
-  },
-  {
-    years: "2024-2025",
-    title: "Amanogawa",
-    description:
-      "Développement du site Amanogawa avec HTML, Tailwind CSS et JavaScript (projet de travail).",
-    descriptionMain: "",
-    technologies: ["HTML", "Tailwind CSS", "JavaScript", "Figma"],
-    link: "https://amanogawa.space/",
-    linkGit: "",
-    category: "work",
-    rnpc: "",
-    img: "",
-  },
-  {
-    years: "2024-2025",
-    title: "Mindcare",
-    description: "Plateforme web collaborative sur la santé mentale.",
-    descriptionMain: "SeriesTracker est une application conçue pour vous aider à gérer vos séries télévisées. Elle vous permet de suivre les épisodes que vous avez regardés, de découvrir de nouvelles séries et de partager votre expérience avec vos amis. L'application est construite à l'aide de l'API BetaSeries, qui fournit des outils puissants et pratiques pour interagir avec les données des séries télévisées.",
-    technologies: ["Angular", "TypeScript", "SpringBoot", "MySQL", "Tailwind CSS", "Docker"],
-    link: "https://mind-care.fr/",
-    linkGit: "https://github.com/MindCareFR/mindcare",
-    category: "study",
-    rnpc: "",
-    img: "/MindCare.png",
-  },
-  {
-    years: "2025",
-    title: "Mobile App",
-    description: "Application Android avec Kotlin.",
-    descriptionMain: "",
-    technologies: ["Kotlin"],
-    link: "",
-    linkGit: "",
-    category: "study",
-    rnpc: "",
-    img: "",
-  },
-  {
-    years: "2024",
-    title: "Series Tracker",
-    description: "SeriesTracker est une application conçue pour vous aider à gérer vos séries télévisées. Elle vous permet de suivre les épisodes que vous avez regardés, de découvrir de nouvelles séries et de partager votre expérience avec vos amis. L'application est construite à l'aide de l'API BetaSeries, qui fournit des outils puissants et pratiques pour interagir avec les données des séries télévisées.",
-    descriptionMain: "",
-    technologies: ["Angular", "Tailwind CSS", "REST API"],
-    link: "",
-    linkGit: "",
-    category: "study",
-    rnpc: "",
-    img: "",
-  },
-  {
-    years: "2024",
-    title: "Hackathon",
-    description: "Projet d'équipe React + Python.",
-    descriptionMain: "",
-    technologies: ["React", "Tailwind CSS", "Python"],
-    link: "",
-    linkGit: "",
-    category: "study",
-    rnpc: "",
-    img: "",
-  },
-  {
-    years: "2024",
-    title: "MyCinema",
-    description: "Projet PHP/MySQL de gestion de films.",
-    descriptionMain: "",
-    technologies: ["HTML", "CSS", "PHP", "MySQL"],
-    link: "",
-    linkGit: "",
-    category: "study",
-    rnpc: "",
-    img: "",
-  },
-  {
-    years: "2024",
-    title: "Civic",
-    description: "Projet scolaire Angular + Tailwind.",
-    descriptionMain: "",
-    technologies: ["Angular", "Tailwind CSS", "Figma"],
-    link: "",
-    linkGit: "",
-    category: "study",
-    rnpc: "",
-    img: "/Rinat.jpg",
-  },
-];
+import { projects, Project } from "../data/proCardInfo";
 
 function ProCard({ project, onClick }: { project: Project; onClick: () => void }) {
   return (
@@ -144,9 +31,43 @@ export default function ProjectsSection() {
   const [selectedTech, setSelectedTech] = useState<string | null>(null);
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
-  const allTechnologies = Array.from(
-    new Set(projects.flatMap((p) => p.technologies))
-  ).sort();
+  const modalRef = useRef<HTMLDivElement | null>(null);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    // при открытии нового проекта всегда начинаем с первого фото
+    if (activeProject) setCurrentIndex(0);
+  }, [activeProject]);
+
+
+  // 🔒 Блокируем скролл фона при открытой модалке
+  useEffect(() => {
+    if (activeProject) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [activeProject]);
+
+  // 🧠 Клик вне модалки = закрыть
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        setActiveProject(null);
+      }
+    };
+
+    if (activeProject) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [activeProject]);
+
+  const allTechnologies = Array.from(new Set(projects.flatMap((p) => p.technologies))).sort();
 
   const filteredProjects = projects.filter((p) => {
     const categoryMatch = selectedCategory === "all" || p.category === selectedCategory;
@@ -166,7 +87,9 @@ export default function ProjectsSection() {
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat as "all" | "work" | "study")}
-            className={`px-4 py-2 rounded-full border ${selectedCategory === cat ? "bg-blue-500 text-white" : "bg-gray-100 text-gray-700"
+            className={`px-4 py-2 rounded-full border ${selectedCategory === cat
+              ? "bg-blue-500 text-white"
+              : "bg-gray-100 text-gray-700"
               }`}
           >
             {cat === "all" ? "Tous" : cat === "work" ? "Travail" : "Études"}
@@ -203,11 +126,14 @@ export default function ProjectsSection() {
         )}
       </div>
 
-      {/* Модалка */}
+      {/* 🔳 Модалка */}
       {activeProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-md bg-black/50">
-          <div className="bg-base rounded-lg shadow-lg w-full max-h-[80vh] max-w-[70vw] p-6 relative overflow-y-auto">
-            {/* Закрыть */}
+          <div
+            ref={modalRef}
+            className="bg-base rounded-lg shadow-lg w-full max-h-[80vh] max-w-[70vw] p-6 relative overflow-y-auto"
+          >
+            {/* Кнопка закрытия */}
             <button
               onClick={() => setActiveProject(null)}
               className="absolute text-xl top-2 right-3 text-red-800 hover:text-red-500"
@@ -223,27 +149,48 @@ export default function ProjectsSection() {
               </span>
             </div>
 
-            {activeProject.img && (
-              <div className="mb-4 mx-auto relative w-[60vw] h-[60vh]">
+            {activeProject.img && activeProject.img.length > 0 && (
+              <div className="relative mb-6 mx-auto w-full max-w-[900px] flex justify-center items-center">
+                {/* стрелка влево */}
+                {activeProject.img.length > 1 && (
+                  <button
+                    onClick={() => setCurrentIndex((prev) => (prev - 1 + activeProject.img.length) % activeProject.img.length)}
+                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/60"
+                  >
+                    ‹
+                  </button>
+                )}
+
+                {/* само изображение */}
                 <Image
-                  src={activeProject.img}
-                  alt={`Image du projet ${activeProject.title}`}
-                  fill
-                  className="rounded-lg w-full h-auto object-cover"
+                  src={activeProject.img[currentIndex]}
+                  alt={`Image ${currentIndex + 1} du projet ${activeProject.title}`}
+                  width={900}
+                  height={600}
+                  className="rounded-lg object-contain max-h-[70vh] w-auto transition-all duration-300"
                 />
+
+                {/* стрелка вправо */}
+                {activeProject.img.length > 1 && (
+                  <button
+                    onClick={() => setCurrentIndex((prev) => (prev + 1) % activeProject.img.length)}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/60"
+                  >
+                    ›
+                  </button>
+                )}
               </div>
             )}
-            
-            {/* Технологии */}
-            <p className="text-text-secondary text mb-2">
+
+
+
+            <p className="text-text-secondary mb-2">
               <strong className="text-text-red">Technologies&nbsp;:</strong>{" "}
               {activeProject.technologies.join(", ")}
             </p>
-            
-            {/* Описание */}
+
             <p className="text-gray-700 mb-4">{activeProject.descriptionMain}</p>
 
-            {/* Кнопка на сайт */}
             {activeProject.link && (
               <Link
                 href={activeProject.link}
@@ -254,6 +201,7 @@ export default function ProjectsSection() {
                 Voir le site
               </Link>
             )}
+
             {activeProject.linkGit && (
               <Link
                 href={activeProject.linkGit}
@@ -264,7 +212,6 @@ export default function ProjectsSection() {
                 Voir le code
               </Link>
             )}
-            {/* Описание rnpc */} 
           </div>
         </div>
       )}

@@ -126,81 +126,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Projets */}
-      {/* <section id="projets" className="py-16 bg-base-light">
-        <h2 className="text-3xl text-text-primary font-bold mb-8 text-center">Projets dans lesquels j’ai mis une part de moi</h2>
-        <div className="container grid md:grid-cols-2 mx-auto px-4">
-
-          <ProCard
-            years="2024"
-            title="Mobalpa E-commerce"
-            description=" J&apos;ai participé au développement en équipe d&apos;une plateforme de commerce électronique pour
-              Mobalpa à l&apos;aide d&apos;Angular, TypeScript et Tailwind CSS, en me concentrant sur le front-end et
-              l&apos;intégration de l&apos;API."
-            technologies="Angular, TypeScript, Tailwind-CSS, MySQL, MongoDB, Figma, , Java, Swagger, HTML"
-            link="https://github.com/twnguydev/mobalpa"
-          />
-
-          <ProCard
-            years="2024-2025"
-            title="Amonogawa"
-            description="J&apos;ai participé au développement du site web Amanogawa à l&apos;aide de HTML, Tailwind CSS et
-                JavaScript, en assurant une conception adaptative et des animations interactives pour une expérience
-                utilisateur dynamique. Работа"
-            technologies="AngularJS, Tailwind CSS, ,HTML, CSS, Figma,"
-            link="https://amanogawa.space/"
-          />
-          
-          <ProCard
-            years="2024-2025"
-            title="Mindcare"
-            description=""
-            technologies="Angular, Tailwind CSS, Figma, TypeScript, SpringBoot, MySQL, Laravel, Pyton, Swagger, HTML, Docker"
-            link=""
-          />
-
-          <ProCard
-            years="2025"
-            title="Мобильное преложение"
-            description=""
-            technologies="Kotlin"
-            link=""
-          />
-          
-          <ProCard
-            years="2024"
-            title="Series Tracker"
-            description=""
-            technologies="Angular, Tailwind CSS, REST API"
-            link=""
-          />
-
-          <ProCard
-            years="Хакатон"
-            title="2024"
-            description=""
-            technologies="React, Tailwind CSS, Pyton"
-            link=""
-          />
-
-          <ProCard
-            years="MyCinema"
-            title="2024"
-            description=""
-            technologies="HTML, CSS, PHP, MySQL"
-            link=""
-          />
-
-          <ProCard
-            years="2024"
-            title="Сивик"
-            description=""
-            technologies="Angular, Tailwind  CSS, Figma"
-            link=""
-          />
-        </div>
-      </section> */}
-
       <ProjectsSection />
       {/* <Projects /> */}
 
@@ -377,45 +302,6 @@ function EduCard({
     </Link>
   );
 }
-
-// function ProCard({
-//   title,
-//   years,
-//   description,
-//   technologies,
-//   link
-// }: {
-//   title: string
-//   years: string
-//   description: string
-//   technologies: string
-//   link: string
-// }) {
-//   return (
-//     <Link href={link} target="_blank" rel="noopener">
-//       <div
-//         className="mb-8 p-6 bg-base-card-light m-2 rounded-lg hover:shadow-lg transition-shadow cursor-pointer"
-//         data-aos="fade-up"
-//         data-aos-delay="100"
-//       >
-//         <div className="flex">
-//           <h3 className="text-2xl text-text-primary font-semibold mb-2">{title}</h3>
-//           <span className="inset-y-0 right-0">
-//             <span className="bg-base-light inset-y-0 right-0 text-gray-800 px-3 py-1 rounded-full text-sm font-medium inline-block">
-//               {years}
-//             </span>
-//           </span>
-//         </div>
-//         <p className="text-gray-800 mb-1">
-//           {description}
-//         </p>
-//         <p className="text-text-secondary text-sm">
-//           <strong className="text-text-red">Technologies&nbsp;:</strong> {technologies}
-//         </p>
-//       </div>
-//     </Link>
-//   )
-// }
 
 function SkillCard({
   title,
