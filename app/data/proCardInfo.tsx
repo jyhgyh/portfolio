@@ -74,7 +74,7 @@ export const projects: Project[] = [
     linkGit: "",
     category: "study",
     rnpc: "",
-    img:["/projects/",]
+    img:["/projects/Series.png", "/projects/Series1.png", "/projects/Series2.png"]
   },
   {
     years: "2024",
@@ -98,7 +98,7 @@ export const projects: Project[] = [
     linkGit: "",
     category: "study",
     rnpc: "",
-    img:["/projects/",]
+    img:["/projects/cinema.png", "/projects/cinema1.png", "/projects/cinema2.png", "/projects/cinema3.png",]
   },
   {
     years: "2024",
