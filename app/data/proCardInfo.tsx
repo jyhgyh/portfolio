@@ -23,7 +23,7 @@ export const projects: Project[] = [
     linkGit: "https://github.com/twnguydev/mobalpa",
     category: "study",
     rnpc: "",
-    img:["/projects/mobalpa.png", "/projects/mobalpa1.webp", "/projects/mobalpa2.webp",]
+    img:["/projects/mobalpa.png", "/projects/mobalpa2.webp", "/projects/mobalpa3.webp",]
   },
   {
     years: "2024-2025",
