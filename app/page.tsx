@@ -130,11 +130,12 @@ export default function HomePage() {
       {/* <Projects /> */}
 
 
-      {/* Formation */}
       <section id="formation" className="py-16 bg-base" data-aos="fade-up">
-        <div className="max-w-1/2 mx-auto px-4">
-          <h2 className="text-3xl text-text-primary font-bold mb-8 text-center">Une formation qui m’a façonné</h2>
-
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl text-text-primary font-bold mb-8 text-center">
+            Une formation qui m’a façonné
+          </h2>
+          
           <EduCard
             years="2023-2025"
             title="Web@cadémie by Epitech"
