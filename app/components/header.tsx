@@ -37,9 +37,10 @@ export default function Header() {
           ))}
           <li>
             <a
-              href=""
-              className="ml-2 text-text-red hover:text-blue-600 transition-colors"
-            >
+                href="/CV_Rinat_Hirfanov.pdf"
+                download="Rinat_Hirfanov_CV.pdf"
+                className="ml-2 text-text-red hover:text-blue-600 transition-colors"
+              >
               CV
             </a>
           </li>
@@ -72,12 +73,12 @@ export default function Header() {
             ))}
             <li>
               <a
-                href="/CV_Rinat_Hirfanov.pdf"
+                href="./CV_Rinat_Hirfanov.pdf"
                 download="Rinat_Hirfanov_CV.pdf"
                 className="ml-2 text-text-red hover:text-blue-600 transition-colors"
               >
                 CV
-              </a>
+              </a>  
             </li>
           </ul>
         </div>
