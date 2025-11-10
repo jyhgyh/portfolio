@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -135,7 +134,7 @@ export default function HomePage() {
           <h2 className="text-3xl text-text-primary font-bold mb-8 text-center">
             Une formation qui m’a façonné
           </h2>
-          
+
           <EduCard
             years="2023-2025"
             title="Web@cadémie by Epitech"
