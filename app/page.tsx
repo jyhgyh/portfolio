@@ -25,7 +25,7 @@ export default function HomePage() {
       <Accueil />
 
       {/* À propos */}
-      <section id="apropos" className="py-16 bg-base-light" data-aos="fade-up">
+      <section id="about" className="py-16 bg-base-light" data-aos="fade-up">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-text-primary mb-10 text-center">À propos de moi</h2>
 
