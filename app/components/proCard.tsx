@@ -5,6 +5,61 @@ import Image from "next/image";
 import Link from "next/link";
 import { projects, Project } from "../data/proCardInfo";
 
+/* ===========================================
+   🔥 Компонент секций для модалки
+=========================================== */
+function ProjectSkills({ sections }: { sections: Project["sections"] }) {
+  if (!sections || sections.length === 0) return null;
+
+  const isTwoColumns = sections.length >= 2;
+
+  return (
+    <div
+      className={`grid gap-6 mt-8 ${isTwoColumns ? "md:grid-cols-2 grid-cols-1" : "grid-cols-1"
+        }`}
+    >
+      {sections.map((section, index) => (
+        <div
+          key={index}
+          className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm"
+        >
+          {/* Заголовок */}
+          <div className="flex items-center justify-between mb-3">
+            <h4 className="font-semibold text-lg text-gray-900">
+              {section.title}
+            </h4>
+
+            {section.tooltip && (
+              <div className="relative group">
+                <span className="text-gray-500 text-sm cursor-pointer">ℹ️</span>
+
+                {/* Tooltip */}
+                <div
+                  className="absolute right-0 ml-6 top-1/2 -translate-y-1/2 bg-black text-white text-xs rounded-md px-3 py-2 hidden group-hover:block z-20 max-w-[calc(1rem-10rem)] break-words">
+                  {section.tooltip}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Список */}
+          <ul className="space-y-2">
+            {section.items.map((item, i) => (
+              <li className="text-gray-700 text-sm flex gap-2" key={i}>
+                <span className="text-blue-500 mt-1">•</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* ===========================================
+    🔥 Карточка проекта
+=========================================== */
 function ProCard({ project, onClick }: { project: Project; onClick: () => void }) {
   return (
     <div
@@ -26,31 +81,26 @@ function ProCard({ project, onClick }: { project: Project; onClick: () => void }
   );
 }
 
+/* ===========================================
+    🔥 Основная секция с проектами
+=========================================== */
 export default function ProjectsSection() {
   const [selectedCategory, setSelectedCategory] = useState<"all" | "work" | "study">("all");
   const [selectedTech, setSelectedTech] = useState<string | null>(null);
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   const modalRef = useRef<HTMLDivElement | null>(null);
-
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    // при открытии нового проекта всегда начинаем с первого фото
     if (activeProject) setCurrentIndex(0);
   }, [activeProject]);
 
-
-  // 🔒 Блокируем скролл фона при открытой модалке
   useEffect(() => {
-    if (activeProject) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = activeProject ? "hidden" : "auto";
   }, [activeProject]);
 
-  // 🧠 Клик вне модалки = закрыть
+  // Закрытие по клику вне модалки
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
@@ -81,15 +131,15 @@ export default function ProjectsSection() {
         Projets dans lesquels j’ai mis une part de moi
       </h2>
 
-      {/* Фильтры */}
+      {/* Категории */}
       <div className="flex flex-wrap justify-center gap-3 mb-8">
         {["all", "work", "study"].map((cat) => (
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat as "all" | "work" | "study")}
             className={`px-4 py-2 rounded-full border ${selectedCategory === cat
-              ? "bg-blue-500 text-white"
-              : "bg-gray-100 text-gray-700"
+                ? "bg-blue-500 text-white"
+                : "bg-gray-100 text-gray-700"
               }`}
           >
             {cat === "all" ? "Tous" : cat === "work" ? "Travail" : "Études"}
@@ -97,15 +147,15 @@ export default function ProjectsSection() {
         ))}
       </div>
 
-      {/* Фильтр технологий */}
+      {/* Технологии */}
       <div className="flex flex-wrap justify-center gap-2 mb-8">
         {allTechnologies.map((tech) => (
           <button
             key={tech}
             onClick={() => setSelectedTech(selectedTech === tech ? null : tech)}
             className={`px-3 py-1.5 text-sm rounded-full border transition ${selectedTech === tech
-              ? "bg-blue-500 text-white border-blue-500"
-              : "bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200"
+                ? "bg-blue-500 text-white border-blue-500"
+                : "bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200"
               }`}
           >
             {tech}
@@ -113,7 +163,7 @@ export default function ProjectsSection() {
         ))}
       </div>
 
-      {/* Сетка проектов */}
+      {/* Сетка */}
       <div className="container grid md:grid-cols-2 mx-auto px-4">
         {filteredProjects.length > 0 ? (
           filteredProjects.map((project) => (
@@ -126,14 +176,14 @@ export default function ProjectsSection() {
         )}
       </div>
 
-      {/* 🔳 Модалка */}
+      {/* Модалка */}
       {activeProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-md bg-black/50">
           <div
             ref={modalRef}
             className="bg-base rounded-lg shadow-lg w-full max-h-[80vh] max-w-[70vw] p-6 relative overflow-y-auto"
           >
-            {/* Кнопка закрытия */}
+            {/* Закрыть */}
             <button
               onClick={() => setActiveProject(null)}
               className="absolute text-xl top-2 right-3 text-red-800 hover:text-red-500"
@@ -149,19 +199,21 @@ export default function ProjectsSection() {
               </span>
             </div>
 
+            {/* Карусель */}
             {activeProject.img && activeProject.img.length > 0 && (
               <div className="relative mb-6 mx-auto w-full max-w-[900px] flex justify-center items-center">
-                {/* стрелка влево */}
+
                 {activeProject.img.length > 1 && (
                   <button
-                    onClick={() => setCurrentIndex((prev) => (prev - 1 + activeProject.img.length) % activeProject.img.length)}
+                    onClick={() =>
+                      setCurrentIndex((prev) => (prev - 1 + activeProject.img.length) % activeProject.img.length)
+                    }
                     className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/60"
                   >
                     ‹
                   </button>
                 )}
 
-                {/* само изображение */}
                 <Image
                   src={activeProject.img[currentIndex]}
                   alt={`Image ${currentIndex + 1} du projet ${activeProject.title}`}
@@ -170,7 +222,6 @@ export default function ProjectsSection() {
                   className="rounded-lg object-contain max-h-[70vh] w-auto transition-all duration-300"
                 />
 
-                {/* стрелка вправо */}
                 {activeProject.img.length > 1 && (
                   <button
                     onClick={() => setCurrentIndex((prev) => (prev + 1) % activeProject.img.length)}
@@ -182,36 +233,44 @@ export default function ProjectsSection() {
               </div>
             )}
 
-
-
+            {/* Technologies */}
             <p className="text-text-secondary mb-2">
               <strong className="text-text-red">Technologies&nbsp;:</strong>{" "}
               {activeProject.technologies.join(", ")}
             </p>
 
+            {/* Основное описание */}
             <p className="text-gray-700 mb-4">{activeProject.descriptionMain}</p>
 
-            {activeProject.link && (
-              <Link
-                href={activeProject.link}
-                target="_blank"
-                rel="noopener"
-                className="inline-block bg-text-pink hover:bg-blue-700 text-white px-4 py-2 rounded-full mr-2"
-              >
-                Voir le site
-              </Link>
+            {/* 🔥 ВСТАВЛЕНО СЮДА — ПРАВИЛЬНОЕ МЕСТО */}
+            {activeProject.sections && (
+              <ProjectSkills sections={activeProject.sections} />
             )}
 
-            {activeProject.linkGit && (
-              <Link
-                href={activeProject.linkGit}
-                target="_blank"
-                rel="noopener"
-                className="inline-block bg-text-pink hover:bg-accent-hover text-white px-4 py-2 rounded-full"
-              >
-                Voir le code
-              </Link>
-            )}
+            {/* Кнопки */}
+            <div className="mt-6">
+              {activeProject.link && (
+                <Link
+                  href={activeProject.link}
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-block bg-text-pink hover:bg-blue-700 text-white px-4 py-2 rounded-full mr-2"
+                >
+                  Voir le site
+                </Link>
+              )}
+
+              {activeProject.linkGit && (
+                <Link
+                  href={activeProject.linkGit}
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-block bg-text-pink hover:bg-accent-hover text-white px-4 py-2 rounded-full"
+                >
+                  Voir le code
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       )}

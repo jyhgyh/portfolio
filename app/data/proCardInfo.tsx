@@ -9,7 +9,15 @@ export type Project = {
   category: "work" | "study";
   rnpc: string;
   img: string[];
+
+  // ⬇️ Новое поле
+  sections?: {
+    title: string;
+    tooltip?: string; // текст для всплывашки
+    items: string[];
+  }[];
 };
+
 
 export const projects: Project[] = [
   {
@@ -23,7 +31,7 @@ export const projects: Project[] = [
     linkGit: "https://github.com/twnguydev/mobalpa",
     category: "study",
     rnpc: "",
-    img:["/projects/mobalpa.png", "/projects/mobalpa2.webp", "/projects/mobalpa3.webp",]
+    img: ["/projects/mobalpa.png", "/projects/mobalpa2.webp", "/projects/mobalpa3.webp",]
   },
   {
     years: "2024-2025",
@@ -36,20 +44,66 @@ export const projects: Project[] = [
     linkGit: "",
     category: "work",
     rnpc: "",
-    img:["/projects/amanogawa.png",]
+    img: ["/projects/amanogawa.png",]
   },
   {
-    years: "2024-2025",
-    title: "Mindcare",
-    description: "Plateforme web collaborative sur la santé mentale.",
-    descriptionMain:
-      "SeriesTracker est une application conçue pour vous aider à gérer vos séries télévisées. Elle vous permet de suivre les épisodes que vous avez regardés, de découvrir de nouvelles séries et de partager votre expérience avec vos amis. L'application est construite à l'aide de l'API BetaSeries, qui fournit des outils puissants et pratiques pour interagir avec les données des séries télévisées.",
-    technologies: ["Angular", "TypeScript", "SpringBoot", "MySQL", "Tailwind CSS", "Docker"],
-    link: "https://mind-care.fr/",
-    linkGit: "https://github.com/MindCareFR/mindcare",
+    years: "2024",
+    title: "MindCare",
+    description: "Solution digitale autour de la santé mentale...",
+    descriptionMain: "MindCare est notre projet de fin d'études...",
+    technologies: ["Angular", "Tailwind", "TypeScript", "Laravel", "MySQL"],
+    link: "",
+    linkGit: "",
     category: "study",
     rnpc: "",
-    img:["/projects/MindCare.png", "/projects/MindCare1.png", "/projects/MindCare2.png"]
+    img: ["/projects/MindCare.png", "/projects/MindCare1.png", "/projects/MindCare2.png"],
+    sections: [
+      {
+        title: "Management",
+        tooltip: "RNCP38436BC01 - Cadrer un projet et conceptualiser une solution web",
+        items: [
+          "Analyser le marché et définir un ensemble de besoins métier",
+          "Rédiger un Cahier des Charges (CDC) en partant d'une expression de besoins",
+          "Rédiger des spécifications techniques en analysant un CDC",
+          "Préparer une présentation technique pour le client"
+        ]
+      },
+      {
+        title: "Architecture",
+        tooltip: "RNCP38436BC02 - Structurer l’architecture d’une solution web",
+        items: [
+          "Modélisation et conception de l’interface utilisateur",
+          "Déploiement de l’environnement de travail",
+          "Réalisation de maquettes UI/UX",
+          "Identification des BDD et interconnexions"
+        ]
+      },
+      {
+        title: "Développement",
+        items: [
+          "Développer le prototype de la solution web",
+          "Implémenter le front-end selon les maquettes",
+          "Respect des normes d’accessibilité et ergonomie",
+          "Plan de tests unitaires et intégration"
+        ]
+      },
+      {
+        title: "Qualité",
+        items: [
+          "Analyse de l’ergonomie et accessibilité",
+          "Monitoring et amélioration continue",
+          "Support et maintenance"
+        ]
+      },
+      {
+        title: "Qualité",
+        items: [
+          "Analyse de l’ergonomie et accessibilité",
+          "Monitoring et amélioration continue",
+          "Support et maintenance"
+        ]
+      }
+    ]
   },
   {
     years: "2025",
@@ -61,7 +115,7 @@ export const projects: Project[] = [
     linkGit: "",
     category: "study",
     rnpc: "",
-    img:["/projects/Mobile.png", "/projects/Mobile1.png", "/projects/Mobile2.png"]
+    img: ["/projects/Mobile.png", "/projects/Mobile1.png", "/projects/Mobile2.png"]
   },
   {
     years: "2024",
@@ -74,7 +128,7 @@ export const projects: Project[] = [
     linkGit: "",
     category: "study",
     rnpc: "",
-    img:["/projects/Series.png", "/projects/Series1.png", "/projects/Series2.png"]
+    img: ["/projects/Series.png", "/projects/Series1.png", "/projects/Series2.png"]
   },
   {
     years: "2024",
@@ -86,7 +140,7 @@ export const projects: Project[] = [
     linkGit: "",
     category: "study",
     rnpc: "",
-    img:["/projects/",]
+    img: ["/projects/",]
   },
   {
     years: "2024",
@@ -98,7 +152,7 @@ export const projects: Project[] = [
     linkGit: "",
     category: "study",
     rnpc: "",
-    img:["/projects/cinema.png", "/projects/cinema1.png", "/projects/cinema2.png", "/projects/cinema3.png",]
+    img: ["/projects/cinema.png", "/projects/cinema1.png", "/projects/cinema2.png", "/projects/cinema3.png",]
   },
   {
     years: "2024",
@@ -110,6 +164,6 @@ export const projects: Project[] = [
     linkGit: "",
     category: "study",
     rnpc: "",
-    img:["/projects/civic.png", "/projects/civic1.png", "/projects/civic2.png", "/projects/civic3.png",]
+    img: ["/projects/civic.png", "/projects/civic1.png", "/projects/civic2.png", "/projects/civic3.png",]
   },
 ];
