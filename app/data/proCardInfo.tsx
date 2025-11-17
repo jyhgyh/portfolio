@@ -11,10 +11,13 @@ export type Project = {
   img: string[];
 
   // ⬇️ Новое поле
-  sections?: {
-    title: string;
-    tooltip?: string; // текст для всплывашки
-    items: string[];
+  blocks?: {
+    sections: {
+      blockTitle: string;   // ← заголовок, который ты хочешь "внутри"
+      title: string;
+      tooltip?: string;
+      items: string[];
+    }[];
   }[];
 };
 
@@ -57,50 +60,52 @@ export const projects: Project[] = [
     category: "study",
     rnpc: "",
     img: ["/projects/MindCare.png", "/projects/MindCare1.png", "/projects/MindCare2.png"],
-    sections: [
+    blocks: [
       {
-        title: "Management",
-        tooltip: "RNCP38436BC01 - Cadrer un projet et conceptualiser une solution web",
-        items: [
-          "Analyser le marché et définir un ensemble de besoins métier",
-          "Rédiger un Cahier des Charges (CDC) en partant d'une expression de besoins",
-          "Rédiger des spécifications techniques en analysant un CDC",
-          "Préparer une présentation technique pour le client"
-        ]
-      },
-      {
-        title: "Architecture",
-        tooltip: "RNCP38436BC02 - Structurer l’architecture d’une solution web",
-        items: [
-          "Modélisation et conception de l’interface utilisateur",
-          "Déploiement de l’environnement de travail",
-          "Réalisation de maquettes UI/UX",
-          "Identification des BDD et interconnexions"
-        ]
-      },
-      {
-        title: "Développement",
-        items: [
-          "Développer le prototype de la solution web",
-          "Implémenter le front-end selon les maquettes",
-          "Respect des normes d’accessibilité et ergonomie",
-          "Plan de tests unitaires et intégration"
-        ]
-      },
-      {
-        title: "Qualité",
-        items: [
-          "Analyse de l’ergonomie et accessibilité",
-          "Monitoring et amélioration continue",
-          "Support et maintenance"
-        ]
-      },
-      {
-        title: "Qualité",
-        items: [
-          "Analyse de l’ergonomie et accessibilité",
-          "Monitoring et amélioration continue",
-          "Support et maintenance"
+        // blockTitle: "Management",
+        sections: [
+          {
+            blockTitle: "Management",
+            title: "Analyser le marché et définir un ensemble de besoins métier",
+            tooltip: "RNCP38436BC01 - Cadrer un projet...",
+            items: [
+              "Analyser le marché...",
+              "Rédiger un Cahier des Charges...",
+              "Rédiger des spécifications techniques...",
+              "Préparer une présentation technique..."
+            ]
+          },
+          {
+            blockTitle: "Management",
+            title: "Architecture",
+            tooltip: "RNCP38436BC01 - Structurer l’architecture...",
+            items: [
+              "Modélisation et conception UI",
+              "Déploiement de l’environnement",
+              "Réalisation de maquettes UI/UX",
+              "Identification des BDD"
+            ]
+          },
+          {
+          blockTitle: "Management",
+            title: "Développement",
+            tooltip: "RNCP38436BC02 - Développement web",
+            items: [
+              "Développer le prototype",
+              "Implémenter le front-end",
+              "Respect des normes d’accessibilité",
+              "Plan de tests"
+            ]
+          },
+          {
+          blockTitle: "Management",
+            title: "Qualité",
+            items: [
+              "Analyse ergonomie / accessibilité",
+              "Monitoring et amélioration continue",
+              "Support et maintenance"
+            ]
+          }
         ]
       }
     ]

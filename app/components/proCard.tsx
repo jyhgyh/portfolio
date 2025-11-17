@@ -8,54 +8,68 @@ import { projects, Project } from "../data/proCardInfo";
 /* ===========================================
    🔥 Компонент секций для модалки
 =========================================== */
-function ProjectSkills({ sections }: { sections: Project["sections"] }) {
-  if (!sections || sections.length === 0) return null;
-
-  const isTwoColumns = sections.length >= 2;
+function ProjectSkills({ blocks }: { blocks: Project["blocks"] }) {
+  if (!blocks) return null;
 
   return (
     <div
-      className={`grid gap-6 mt-8 ${isTwoColumns ? "md:grid-cols-2 grid-cols-1" : "grid-cols-1"
-        }`}
+    // className={`grid gap-6 mt-8 ${
+    //   isTwoColumns ? "md:grid-cols-2 grid-cols-1" : "grid-cols-1"
+    // }`}
     >
-      {sections.map((section, index) => (
-        <div
-          key={index}
-          className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm"
-        >
-          {/* Заголовок */}
-          <div className="flex items-center justify-between mb-3">
-            <h4 className="font-semibold text-lg text-gray-900">
-              {section.title}
-            </h4>
+      {blocks.map((block, blockIndex) => (
+        <div key={blockIndex} className="space-y-6 mt-8">
 
-            {section.tooltip && (
-              <div className="relative group">
-                <span className="text-gray-500 text-sm cursor-pointer">ℹ️</span>
+          {block.sections.map((section, sectionIndex) => (
+            <div key={sectionIndex} className="space-y-4">
 
-                {/* Tooltip */}
-                <div
-                  className="absolute right-0 ml-6 top-1/2 -translate-y-1/2 bg-black text-white text-xs rounded-md px-3 py-2 hidden group-hover:block z-20 max-w-[calc(1rem-10rem)] break-words">
-                  {section.tooltip}
+              {/* Заголовок блока */}
+              <h2 className="text-2xl text-text-primary font-bold">
+                {section.blockTitle}
+              </h2>
+
+              {/* Карточка секции */}
+              <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+
+                {/* Заголовок секции */}
+                <div className="flex items-center justify-between mb-3">
+                  <h4 className="font-semibold text-lg text-gray-900">
+                    {section.title}
+                  </h4>
+
+                  {section.tooltip && (
+                    <div className="relative group">
+                      <span className="text-gray-500 text-sm cursor-pointer">ℹ️</span>
+
+                      <div className="absolute right-0 ml-6 top-1/2 -translate-y-1/2
+                                bg-black text-white text-xs rounded-md px-3 py-2
+                                hidden group-hover:block z-20 w-max">
+                        {section.tooltip}
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
-            )}
-          </div>
 
-          {/* Список */}
-          <ul className="space-y-2">
-            {section.items.map((item, i) => (
-              <li className="text-gray-700 text-sm flex gap-2" key={i}>
-                <span className="text-blue-500 mt-1">•</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+                {/* Список */}
+                <ul className="space-y-2">
+                  {section.items.map((item, i) => (
+                    <li key={i} className="text-gray-700 text-sm flex gap-2">
+                      <span className="text-blue-500 mt-1">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+              </div>
+            </div>
+          ))}
+
         </div>
       ))}
     </div>
   );
 }
+
 
 /* ===========================================
     🔥 Карточка проекта
@@ -138,8 +152,8 @@ export default function ProjectsSection() {
             key={cat}
             onClick={() => setSelectedCategory(cat as "all" | "work" | "study")}
             className={`px-4 py-2 rounded-full border ${selectedCategory === cat
-                ? "bg-blue-500 text-white"
-                : "bg-gray-100 text-gray-700"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-100 text-gray-700"
               }`}
           >
             {cat === "all" ? "Tous" : cat === "work" ? "Travail" : "Études"}
@@ -154,8 +168,8 @@ export default function ProjectsSection() {
             key={tech}
             onClick={() => setSelectedTech(selectedTech === tech ? null : tech)}
             className={`px-3 py-1.5 text-sm rounded-full border transition ${selectedTech === tech
-                ? "bg-blue-500 text-white border-blue-500"
-                : "bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200"
+              ? "bg-blue-500 text-white border-blue-500"
+              : "bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200"
               }`}
           >
             {tech}
@@ -243,8 +257,8 @@ export default function ProjectsSection() {
             <p className="text-gray-700 mb-4">{activeProject.descriptionMain}</p>
 
             {/* 🔥 ВСТАВЛЕНО СЮДА — ПРАВИЛЬНОЕ МЕСТО */}
-            {activeProject.sections && (
-              <ProjectSkills sections={activeProject.sections} />
+            {activeProject.blocks && (
+              <ProjectSkills blocks={activeProject.blocks} />
             )}
 
             {/* Кнопки */}
