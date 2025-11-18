@@ -464,23 +464,11 @@ export const projects: Project[] = [
       }
     ]
   },
-  // {
-  //   years: "2024",
-  //   title: "Hackathon",
-  //   description: "Projet d'équipe React + Python.",
-  //   descriptionMain: "",
-  //   technologies: ["React", "Tailwind CSS", "Python"],
-  //   link: "",
-  //   linkGit: "",
-  //   category: "study",
-  //   rnpc: "",
-  //   img: ["/projects/",]
-  // },
   {
     years: "2024",
     title: "MyCinema",
     description: "Projet PHP/MySQL de gestion de films.",
-    descriptionMain: "",
+    descriptionMain: "MyCinema est une application web de gestion de films développée en PHP et MySQL dans le cadre de ma première expérience de projet complet. Elle permet d’interagir avec une base de données de cinéma afin de rechercher des films, gérer les abonnements des clients, consulter l’historique des visionnages et administrer différentes informations liées aux membres. Le projet inclut également un espace client et un espace administrateur, une pagination dynamique, ainsi que des filtres avancés par genre, distributeur ou date de projection. Une attention particulière a été portée à la structuration du code, à la séparation logique/affichage et à l’amélioration progressive de la base de données.",
     technologies: ["HTML", "CSS", "PHP", "MySQL"],
     link: "",
     linkGit: "",
@@ -489,57 +477,48 @@ export const projects: Project[] = [
     img: ["/projects/cinema.png", "/projects/cinema1.png", "/projects/cinema2.png", "/projects/cinema3.png",],
     blocks: [
       {
-        sections: [
+        "sections": [
           {
-            blockTitle: "Management",
-            title: "Cadrage et organisation du projet",
-            tooltip: "RNCP38436BC01 - Cadrer un projet et conceptualiser une solution web",
-            items: [
-              "Analyser le sujet et définir les besoins fonctionnels afin de structurer clairement les objectifs de la solution",
-              "Définir l’architecture générale du projet en séparant l’affichage, la logique applicative et la gestion des données",
-              "Mettre en place l’environnement de développement local (MAMP), organiser la structure des fichiers et préparer la base MySQL fournie"
+            "blockTitle": "Management",
+            "title": "Analyse du besoin et cadrage",
+            "tooltip": "RNCP38436BC01",
+            "items": [
+              "Analyse du sujet et définition des fonctionnalités obligatoires afin de cadrer le périmètre du projet",
+              "Compréhension de la base de données fournie pour identifier les contraintes techniques",
+              "Organisation du travail et planification des étapes de développement dans un projet individuel"
             ]
           },
           {
-            blockTitle: "Architecture",
-            title: "Conception fonctionnelle et base de données",
-            tooltip: "RNCP38436BC01 - Cadrer un projet et conceptualiser une solution web",
-            items: [
-              "Analyser et comprendre la base de données existante avant d’implémenter les fonctionnalités obligatoires",
-              "Intégrer les relations MySQL nécessaires et adapter la structure lorsque requis",
-              "Mettre en place la pagination, les filtres et les différents types de recherches en fonction des contraintes de la base"
+            "blockTitle": "Architecture",
+            "title": "Conception de la structure et de la base de données",
+            "tooltip": "RNCP38436BC01",
+            "items": [
+              "Séparation logique entre l’affichage (front) et la logique métier (PHP)",
+              "Amélioration progressive de la base de données (nouvelles colonnes, images, liens externes)",
+              "Définition des modèles d’interaction (films, membres, abonnements, séances)"
             ]
           },
           {
-            blockTitle: "Développement",
-            title: "Back-end / Base de données",
-            tooltip: "RNCP38436BC02 - Développer une solution web",
-            items: [
-              "Développer l’ensemble des fonctionnalités obligatoires en PHP : recherche de films, gestion des membres, gestion des abonnements",
-              "Implémenter l’ajout, la modification et la suppression d’abonnements via des requêtes SQL sécurisées",
-              "Ajouter l’accès client et administrateur en séparant les rôles et les pages associées",
-              "Intégrer de nouvelles données telles que les images de films et les liens externes vers des sites d’avis",
-              "Mettre en œuvre la logique PHP nécessaire pour interagir avec toutes les tables requises, y compris la gestion des séances et des filtres avancés"
+            "blockTitle": "Développement",
+            "title": "Développement back-end et front-end",
+            "tooltip": "RNCP38436BC02",
+            "items": [
+              "Développement des fonctionnalités de recherche de films par nom, genre, distributeur ou date",
+              "Mise en place d’un système complet pour gérer les membres et leurs abonnements",
+              "Implémentation de la pagination dynamique pour tous les résultats",
+              "Création d’un espace client et d’un espace administrateur",
+              "Ajout des fonctionnalités bonus : images des films et liens vers les sites d’avis",
+              "Refactorisation du code et organisation modulaire"
             ]
           },
           {
-            blockTitle: "",
-            title: "Front-end / UI",
-            tooltip: "RNCP38436BC02 - Développer une solution web",
-            items: [
-              "Construire une interface fonctionnelle en HTML/CSS respectant les exigences du sujet",
-              "Mettre en place la navigation, les formulaires, la pagination et l’affichage des résultats",
-              "Assurer la cohérence visuelle et la lisibilité des données malgré l’absence de contraintes esthétiques avancées"
-            ]
-          },
-          {
-            blockTitle: "Qualité",
-            title: "Analyse, tests et amélioration continue",
-            tooltip: "RNCP38436BC03 - Déployer un système d’assurance qualité",
-            items: [
-              "Vérifier la validité HTML5 de l’ensemble des pages et corriger les erreurs liées à la structure du code",
-              "Tester les fonctionnalités critiques (recherche, filtres, abonnements, accès client/admin)",
-              "Améliorer progressivement l’organisation du code et la séparation logique/affichage pour garantir la maintenabilité"
+            "blockTitle": "Qualité",
+            "title": "Assurance qualité et pérennité",
+            "tooltip": "RNCP38436BC03",
+            "items": [
+              "Respect des bonnes pratiques PHP/MySQL et validation HTML5",
+              "Vérification du bon fonctionnement des filtres, de la pagination et des formulaires",
+              "Documentation du fonctionnement du site et des structures principales"
             ]
           }
         ]
@@ -547,15 +526,88 @@ export const projects: Project[] = [
     ]
   },
   {
-    years: "2024",
-    title: "Civic",
-    description: "Projet scolaire Angular + Tailwind.",
-    descriptionMain: "",
-    technologies: ["Angular", "Tailwind CSS", "Figma"],
-    link: "",
-    linkGit: "",
-    category: "study",
-    rnpc: "",
-    img: ["/projects/civic.png", "/projects/civic1.png", "/projects/civic2.png", "/projects/civic3.png",]
-  },
+    "years": "2024",
+    "title": "Civic",
+    "description": "Projet full-stack Angular + Tailwind + Java Spring en cours de développement.",
+    "descriptionMain": "Civic est une application full-stack en cours de développement, inspirée des plateformes de services publics comme «Дія». Le projet regroupe les documents principaux d’un utilisateur, propose un accès centralisé aux services administratifs (résidence, fiscalité, permis, certificats, aides sociales) et intègre un système de news et de fonctionnalités interactives. Le développement comprend à la fois le front-end Angular/Tailwind et le back-end Java Spring Boot/MySQL, entièrement conçus et réalisés par moi-même.",
+    "technologies": ["Angular", "Tailwind CSS", "Figma", "Java", "Spring Boot", "MySQL"],
+    "link": "",
+    "linkGit": "https://github.com/jyhgyh/Main",
+    "category": "study",
+    "rnpc": "",
+    "img": [
+      "/projects/civic.png",
+      "/projects/civic1.png",
+      "/projects/civic2.png",
+      "/projects/civic3.png"
+    ],
+    "blocks": [
+      {
+        "sections": [
+          {
+            "blockTitle": "Management",
+            "title": "Analyse, conception et documentation",
+            "tooltip": "RNCP38436BC01 - Cadrer un projet et conceptualiser une solution web",
+            "items": [
+              "Analyse des besoins à partir des services administratifs existants et création d’un cahier des charges complet",
+              "Conception de l’architecture fonctionnelle et rédaction d’une documentation détaillée (pages, modules, flux, permissions)",
+              "Création des maquettes Figma et définition de la logique des écrans, inspirée de plateformes gouvernementales comme «Дія»"
+            ]
+          },
+          {
+            "blockTitle": "Architecture",
+            "title": "Architecture front-end et back-end",
+            "tooltip": "RNCP38436BC01 - Conceptualisation d’une solution web",
+            "items": [
+              "Création d'une architecture full-stack comprenant un front-end Angular/Tailwind et un back-end Java Spring Boot",
+              "Organisation du front-end en modules (Documents, Services, News, Profil) avec routing avancé",
+              "Définition des schémas de base de données MySQL pour la gestion des documents, services et notifications"
+            ]
+          },
+          {
+            "blockTitle": "Développement",
+            "title": "Front-end Angular",
+            "tooltip": "RNCP38436BC02 - Développer une solution web",
+            "items": [
+              "Implémentation des pages principales : documents, services, actualités, profil",
+              "Création de composants dynamiques (carrousels, cartes documentaires, listes de services)",
+              "Intégration complète avec l’API interne (Spring Boot) via des services HTTP Angular",
+              "Responsive design et système d’UI basé sur Tailwind CSS"
+            ]
+          },
+          {
+            "blockTitle": "",
+            "title": "Back-end Spring Boot",
+            "tooltip": "RNCP38436BC02 - Développer une solution web",
+            "items": [
+              "Mise en place du serveur Spring Boot et des micro-services REST",
+              "Création des endpoints pour documents, notifications, services administratifs",
+              "Connexion à MySQL, création des entités et des repositories",
+              "Gestion des données utilisateur (sans données réelles) selon des modèles administratifs"
+            ]
+          },
+          {
+            "blockTitle": "Sécurité",
+            "title": "Sécurisation du projet (en cours)",
+            "tooltip": "RNCP38436BC02",
+            "items": [
+              "Gestion des permissions front-end pour les sections sensibles",
+              "Mise en place prévue : authentification sécurisée, JWT, règles d’accès par rôles",
+              "Respect des bonnes pratiques pour la manipulation de données personnelles (RGPD)"
+            ]
+          },
+          {
+            "blockTitle": "Qualité",
+            "title": "Assurance qualité et évolution",
+            "tooltip": "RNCP38436BC03",
+            "items": [
+              "Analyse de l’ergonomie, de l’accessibilité et de la cohérence de l’interface",
+              "Documentation progressive du projet (front + back + API)",
+              "Planification des évolutions : intégration de services supplémentaires, sécurité renforcée, optimisation UX"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 ];
