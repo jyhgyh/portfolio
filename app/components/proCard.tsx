@@ -43,7 +43,7 @@ function ProjectSkills({ blocks }: { blocks: Project["blocks"] }) {
 
                       <div className="absolute right-0 ml-6 top-1/2 -translate-y-1/2
                                 bg-black text-white text-xs rounded-md px-3 py-2
-                                hidden group-hover:block z-20 w-max">
+                                hidden group-hover:block z-20 w-40">
                         {section.tooltip}
                       </div>
                     </div>
