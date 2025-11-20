@@ -53,7 +53,7 @@ export default function Accueil() {
               {/* Передняя сторона */}
               <div className="absolute inset-0 backface-hidden">
                 <Image
-                  src="/I/Rinat.jpg"
+                  src="/I/Rinat.png"
                   alt="Photo front"
                   fill
                   className="object-cover rounded-full"
