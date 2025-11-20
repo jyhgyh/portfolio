@@ -18,7 +18,7 @@ export default function Accueil() {
             Je suis développeur Full-Stak et j’adore transformer des idées en sites web beaux,
             simples et agréables à utiliser.
           </p>
-          <div className="flex my-6 flex-wrap">
+          <div className="flex my-6 flex-wrap justify-center md:justify-start">
             {["Front-end", "Dising", "Business analyst"].map((t) => (
               <span
                 key={t}
@@ -38,17 +38,21 @@ export default function Accueil() {
 
         {/* Правая часть с анимацией переворота */}
         <div
-          className="w-full md:w-1/2 text-center mt-8 md:mt-0"
+          className="w-full md:w-1/2 text-center mt-8 md:mt-0 md:mb-0 mb-8"
           data-aos="fade-left"
         >
           <div
-            className="w-96 h-96 rounded-full mx-auto perspective cursor-pointer"
+            className="
+      w-48 h-48
+      sm:w-64 sm:h-64
+      md:w-96 md:h-96
+      rounded-full mx-auto perspective cursor-pointer
+    "
             onClick={() => setFlipped(!flipped)}
           >
             <div
-              className={`relative w-full h-full transition-transform duration-500 preserve-3d ${
-                flipped ? "rotate-y-180" : ""
-              }`}
+              className={`relative w-full h-full transition-transform duration-500 preserve-3d ${flipped ? "rotate-y-180" : ""
+                }`}
             >
               {/* Передняя сторона */}
               <div className="absolute inset-0 backface-hidden">
