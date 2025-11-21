@@ -189,8 +189,8 @@ export const projects: Project[] = [
   {
     years: "2024",
     title: "MindCare",
-    description: "Solution digitale autour de la santé mentale...",
-    descriptionMain: "MindCare est notre projet de fin d'études...",
+    description: "Plateforme dédiée à la santé mentale",
+    descriptionMain: "MindCare est notre projet de fin d'études et vise à proposer une solution digitale pour une communauté autour de la santé mentale, avec des fonctionnalités de suivi, de coaching et de prévention.",
     technologies: ["Angular", "Tailwind", "TypeScript", "Laravel", "MySQL"],
     link: "",
     linkGit: "",
