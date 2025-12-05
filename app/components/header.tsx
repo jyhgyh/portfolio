@@ -37,7 +37,7 @@ export default function Header() {
           ))}
           <li>
             <a
-                href="/CV_Rinat_Hirfanov.pdf"
+                href="/CV_Rinat_HIRFANOV.pdf"
                 download="Rinat_Hirfanov_CV.pdf"
                 className="ml-2 text-text-red hover:text-blue-600 transition-colors"
               >
@@ -73,7 +73,7 @@ export default function Header() {
             ))}
             <li>
               <a
-                href="./CV_Rinat_Hirfanov.pdf"
+                href="./CV_Rinat_HIRFANOV.pdf"
                 download="Rinat_Hirfanov_CV.pdf"
                 className="ml-2 text-text-red hover:text-blue-600 transition-colors"
               >
