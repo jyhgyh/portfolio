@@ -15,11 +15,11 @@ export default function Accueil() {
             Salut Je m&apos;appelle Rinat!👋
           </h1>
           <p className="text-3xl text-text-secondary">
-            Je suis développeur Front-end et j’adore transformer des idées en sites web beaux,
+            Je suis développeur Full-stuck et j’adore transformer des idées en sites web beaux,
             simples et agréables à utiliser.
           </p>
           <div className="flex my-6 flex-wrap justify-center md:justify-start">
-            {["Front-end", "Dising", "Business analyst"].map((t) => (
+            {["Full-stuck", "Dising", "Business analyst"].map((t) => (
               <span
                 key={t}
                 className="bg-base-light text-gray-800 px-3 py-1 rounded-full text-sm font-medium mr-2 mb-2"
