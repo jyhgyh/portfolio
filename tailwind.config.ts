@@ -17,7 +17,7 @@ const config: Config = {
       text: {
         primary: "#2E2C2A",
         secondary: "#5A5754",
-        red: "#E85A4F",
+        red: "#           ",
         pink: "#b07f47ff"
       },
       accent: {
