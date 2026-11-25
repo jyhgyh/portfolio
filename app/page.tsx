@@ -220,7 +220,7 @@ export default function HomePage() {
               <p>
                 <strong>Téléphone&nbsp;:</strong>{" "}
                 <a href="tel:+33749483876" className="text-blue-600 hover:underline">
-                  +33 7 12 34 56 78
+                  +33 7 49 48 38 76
                 </a>
               </p>
             </div>
